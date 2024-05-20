@@ -1,8 +1,10 @@
 # Jutsu Docs
 
-Welcome to the Jutsu Docs site! This documentation provides comprehensive information about the Jutsu platform, including its vision, mission, key features, and how to get started.
+Welcome to the Jutsu Docs site! This documentation provides comprehensive information about the Jutsu platform,
+including its vision, mission, key features, and how to get started.
 
 ## Table of Contents
+
 1. [Introduction](introduction/overview.md)
 2. [Product Documentation](product/platform-overview.md)
 3. [Tokenomics](tokenomics/introduction-to-jut.md)
