@@ -1,0 +1,6 @@
+root: ./
+structure:
+  readme: introduction/README.md
+  summary: SUMMARY.md
+  ignore:
+    - README.md
