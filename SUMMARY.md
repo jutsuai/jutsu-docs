@@ -35,4 +35,4 @@
   * [Participants](taxonomy/participants.md)
   * [Platform Components](taxonomy/platform-components.md)
   * [Tokenomics](taxonomy/tokenomics.md)
-  * [Workflow Processes](taxonomy/workflow-processes.md)
+  * [Workflows](taxonomy/workflows.md)

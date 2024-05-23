@@ -6,5 +6,6 @@ This section provides a helpful Jutsu taxonomy to provide further context of som
 
 - [Key Terms](key-terms.md)
 - [Participants](participants.md)
+- [Platform Components](./platform-components.md)
 - [Tokenomics](tokenomics.md)
 - [Workflows](workflows.md)

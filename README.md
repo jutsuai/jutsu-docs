@@ -5,27 +5,29 @@ Welcome to the Jutsu Docs site! This documentation provides comprehensive inform
 ## Table of Contents
 
 - [Introduction](./introduction/README.md)
-    - [Overview](./introduction/overview.md)
-    - [Vision and Mission](./introduction/vision-and-mission.md)
-    - [Pitch](./introduction/pitch.md)
-    - [Focus](./introduction/focus.md)
+  - [Overview](./introduction/overview.md)
+  - [Vision and Mission](./introduction/vision-and-mission.md)
+  - [Pitch](./introduction/pitch.md)
+  - [Focus](./introduction/focus.md)
 - [Platform](./platform/README.md)
-    - [Overview](./platform/overview.md)
-    - [Challenges](./platform/challenges.md)
-    - [Objectives](./platform/objectives.md)
-    - [Participants](./platform/participants.md)
-    - [Architecture](./platform/architecture.md)
+  - [Overview](./platform/overview.md)
+  - [Challenges](./platform/challenges.md)
+  - [Objectives](./platform/objectives.md)
+  - [Participants](./platform/participants.md)
+  - [Architecture](./platform/architecture.md)
 - [Tokenomics](./tokenomics/README.md)
-    - [Overview](./tokenomics/overview.md)
-    - [Tokenomic Foundations](./tokenomics/tokenomic-foundations.md)
-    - [Token Distribution](./tokenomics/token-distribution.md)
-    - [Economic Models](./tokenomics/economic-models.md)
-    - [Governance](./tokenomics/governance.md)
+  - [Overview](./tokenomics/overview.md)
+  - [Tokenomic Foundations](./tokenomics/foundations.md)
+  - [Token Issuance](./tokenomics/token-issuance.md)
+  - [Incentives and Rewards](./tokenomics/incentives-and-rewards.md)
+  - [Economic Sustainability and Growth Strategies](./tokenomics/economic-sustainability-and-growth-strategies.md)
+  - [Implementation Strategy](./tokenomics/implementation-strategy.md)
 - [Taxonomy](./taxonomy/README.md)
-    - [Key Concepts](./taxonomy/key-concepts.md)
-    - [Developer Terms](./taxonomy/developer-terms.md)
-    - [Economic Terms](./taxonomy/economic-terms.md)
-    - [Governance Terms](./taxonomy/governance-terms.md)
+  - [Key Terms](./taxonomy/key-terms.md)
+  - [Participants](./taxonomy/participants.md)
+  - [Platform Components](./taxonomy/platform-components.md)
+  - [Tokenomics](./taxonomy/tokenomics.md)
+  - [Workflow Processes](./taxonomy/workflow-processes.md)
 
 ## Getting Started
 
@@ -34,4 +36,3 @@ To get started with the Jutsu platform, please refer to the [Introduction](./int
 ## Community and Support
 
 For more information and support, join our community and participate in discussions. Stay updated with the latest developments and contribute to the growth of the Jutsu ecosystem.
-
