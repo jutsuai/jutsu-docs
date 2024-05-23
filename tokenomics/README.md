@@ -4,7 +4,7 @@ This section provides the tokenomic structure off which the Jutsu Platform perat
 
 ## Sections
 
-- [Overview](./README.md)
+- [Overview](./overview.md)
 - [Foundations](./foundations.md)
 - [Token Issuance](./token-issuance.md)
 - [Incentives and Rewards](./incentives-and-rewards.md)
