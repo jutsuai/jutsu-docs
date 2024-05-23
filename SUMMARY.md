@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Home](README)
+* [Home](README.md)
 * [Introduction](introduction/README.md)
   * [Overview](introduction/overview.md)
   * [Vision and Mission](introduction/vision-and-mission.md)
