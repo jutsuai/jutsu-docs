@@ -34,3 +34,4 @@ To get started with the Jutsu platform, please refer to the [Introduction](./int
 ## Community and Support
 
 For more information and support, join our community and participate in discussions. Stay updated with the latest developments and contribute to the growth of the Jutsu ecosystem.
+
