@@ -1,2 +1,0 @@
-# Tokenomic Foundations
-

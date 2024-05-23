@@ -1,4 +1,4 @@
-# Jutsu Docs
+# Overview
 
 This section provides comprehensive information about the products and ecosystem that comprise the `Jutsu Platform`.
 
