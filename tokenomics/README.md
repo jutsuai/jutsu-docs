@@ -1,10 +1,12 @@
 # Overview
 
-This section provides the tokenomic structure of which is integral to the Jutsu Platform.
+This section provides the tokenomic structure off which the Jutsu Platform perates.
 
 ## Sections
 
 - [Overview](./README.md)
 - [Foundations](./foundations.md)
 - [Token Issuance](./token-issuance.md)
-- [Issuance and Rewards](./issuance-and-rewards.md)
+- [Incentives and Rewards](./incentives-and-rewards.md)
+- [Economic Sustainability and Growth Strategies](./economic-sustainability-and-growth-strategies.md)
+- [Implementation Strategy](./implementation-strategy.md)
