@@ -1,5 +1,7 @@
 # Economic Sustainability and Growth Strategies
 
+This section outlines the strategies designed to ensure the economic sustainability and growth of the Jutsu platform. These strategies are deeply integrated with the platform’s tokenomics to promote a robust economic environment that supports long-term development, user engagement, and expansion.
+
 ## Economic Sustainability
 
 ### Dynamic Reward Structures
