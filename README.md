@@ -27,7 +27,7 @@ Welcome to the Jutsu Docs site! This documentation provides comprehensive inform
   - [Participants](./taxonomy/participants.md)
   - [Platform Components](./taxonomy/platform-components.md)
   - [Tokenomics](./taxonomy/tokenomics.md)
-  - [Workflow Processes](./taxonomy/workflow-processes.md)
+  - [Workflows](./taxonomy/workflows.md)
 
 ## Getting Started
 
