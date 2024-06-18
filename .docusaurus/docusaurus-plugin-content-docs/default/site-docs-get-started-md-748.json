@@ -5,15 +5,23 @@
   "source": "@site/docs/get-started.md",
   "sourceDirName": ".",
   "slug": "/get-started",
-  "permalink": "/docs/docs/get-started",
+  "permalink": "/get-started",
   "draft": false,
   "unlisted": false,
+  "editUrl": "https://github.com/jutsuai/jutsu-docs/tree/main/packages/create-docusaurus/templates/shared/docs/get-started.md",
   "tags": [],
   "version": "current",
-  "frontMatter": {},
-  "sidebar": "docs",
+  "frontMatter": {
+    "id": "get-started",
+    "title": "Get Started"
+  },
+  "sidebar": "docsSidebar",
   "previous": {
     "title": "Introduction",
-    "permalink": "/docs/docs/introduction"
+    "permalink": "/introduction"
+  },
+  "next": {
+    "title": "Overview",
+    "permalink": "/platform-manual/overview"
   }
 }

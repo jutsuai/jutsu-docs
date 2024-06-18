@@ -1,82 +1,56 @@
 {
   "docusaurus-plugin-content-docs": {
     "default": {
-      "path": "/jutsu-docs/docs",
+      "path": "/",
       "versions": [
         {
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/jutsu-docs/docs",
-          "mainDocId": "intro",
+          "path": "/",
+          "mainDocId": "introduction",
           "docs": [
             {
+              "id": "get-started",
+              "path": "/get-started",
+              "sidebar": "docsSidebar"
+            },
+            {
               "id": "intro",
-              "path": "/jutsu-docs/docs/intro",
-              "sidebar": "tutorialSidebar"
+              "path": "/intro"
             },
             {
               "id": "introduction",
-              "path": "/jutsu-docs/docs/introduction",
-              "sidebar": "tutorialSidebar"
+              "path": "/introduction",
+              "sidebar": "docsSidebar"
             },
             {
-              "id": "tutorial-basics/congratulations",
-              "path": "/jutsu-docs/docs/tutorial-basics/congratulations",
-              "sidebar": "tutorialSidebar"
+              "id": "links",
+              "path": "/links",
+              "sidebar": "docsSidebar"
             },
             {
-              "id": "tutorial-basics/create-a-blog-post",
-              "path": "/jutsu-docs/docs/tutorial-basics/create-a-blog-post",
-              "sidebar": "tutorialSidebar"
+              "id": "platform-manual/overview",
+              "path": "/platform-manual/overview",
+              "sidebar": "docsSidebar"
             },
             {
-              "id": "tutorial-basics/create-a-document",
-              "path": "/jutsu-docs/docs/tutorial-basics/create-a-document",
-              "sidebar": "tutorialSidebar"
+              "id": "terminology",
+              "path": "/terminology",
+              "sidebar": "docsSidebar"
             },
             {
-              "id": "tutorial-basics/create-a-page",
-              "path": "/jutsu-docs/docs/tutorial-basics/create-a-page",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-basics/deploy-your-site",
-              "path": "/jutsu-docs/docs/tutorial-basics/deploy-your-site",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-basics/markdown-features",
-              "path": "/jutsu-docs/docs/tutorial-basics/markdown-features",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-extras/manage-docs-versions",
-              "path": "/jutsu-docs/docs/tutorial-extras/manage-docs-versions",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-extras/translate-your-site",
-              "path": "/jutsu-docs/docs/tutorial-extras/translate-your-site",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "/category/tutorial---basics",
-              "path": "/jutsu-docs/docs/category/tutorial---basics",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "/category/tutorial---extras",
-              "path": "/jutsu-docs/docs/category/tutorial---extras",
-              "sidebar": "tutorialSidebar"
+              "id": "tokenomics/overview",
+              "path": "/tokenomics/overview",
+              "sidebar": "docsSidebar"
             }
           ],
           "draftIds": [],
           "sidebars": {
-            "tutorialSidebar": {
+            "docsSidebar": {
               "link": {
-                "path": "/jutsu-docs/docs/intro",
-                "label": "intro"
+                "path": "/introduction",
+                "label": "introduction"
               }
             }
           }

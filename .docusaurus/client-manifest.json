@@ -27,6 +27,9 @@
       869,
       354
     ],
+    "0058b4c6": [
+      849
+    ],
     "0e384e19": [
       976
     ],
@@ -48,9 +51,6 @@
     "393be207": [
       134
     ],
-    "44a3bcc5": [
-      230
-    ],
     "533a09ca": [
       98
     ],
@@ -60,11 +60,11 @@
     "5e95c892": [
       647
     ],
+    "6bb166bd": [
+      518
+    ],
     "822bd8ab": [
       748
-    ],
-    "9aa38c4c": [
-      365
     ],
     "a09c2993": [
       899
@@ -82,12 +82,12 @@
     "aba21aa0": [
       742
     ],
-    "c222238c": [
-      842
-    ],
     "c4f5d8e4": [
       869,
       634
+    ],
+    "c8a4e95a": [
+      845
     ],
     "dff1c289": [
       724
@@ -116,7 +116,7 @@
         {
           "file": "assets/js/a94703ab.c021f407.js",
           "hash": "e392c94207516e1b",
-          "publicPath": "/jutsu-docs/assets/js/a94703ab.c021f407.js"
+          "publicPath": "/assets/js/a94703ab.c021f407.js"
         }
       ]
     },
@@ -125,34 +125,25 @@
         {
           "file": "assets/js/1f391b9e.1bf96447.js",
           "hash": "3eef0190be569c2c",
-          "publicPath": "/jutsu-docs/assets/js/1f391b9e.1bf96447.js"
+          "publicPath": "/assets/js/1f391b9e.1bf96447.js"
         }
       ]
     },
     "98": {
       "js": [
         {
-          "file": "assets/js/533a09ca.c772a714.js",
-          "hash": "68561569a14c5d9d",
-          "publicPath": "/jutsu-docs/assets/js/533a09ca.c772a714.js"
+          "file": "assets/js/533a09ca.60842002.js",
+          "hash": "677a38294a72a5a3",
+          "publicPath": "/assets/js/533a09ca.60842002.js"
         }
       ]
     },
     "134": {
       "js": [
         {
-          "file": "assets/js/393be207.9e321374.js",
-          "hash": "f467a4f03d21d451",
-          "publicPath": "/jutsu-docs/assets/js/393be207.9e321374.js"
-        }
-      ]
-    },
-    "230": {
-      "js": [
-        {
-          "file": "assets/js/44a3bcc5.00254407.js",
-          "hash": "dd052a835a6c39da",
-          "publicPath": "/jutsu-docs/assets/js/44a3bcc5.00254407.js"
+          "file": "assets/js/393be207.e1ef98d2.js",
+          "hash": "7eee1e2a5a1045fd",
+          "publicPath": "/assets/js/393be207.e1ef98d2.js"
         }
       ]
     },
@@ -161,7 +152,7 @@
         {
           "file": "assets/js/a7456010.d27e4924.js",
           "hash": "3dcf190958117047",
-          "publicPath": "/jutsu-docs/assets/js/a7456010.d27e4924.js"
+          "publicPath": "/assets/js/a7456010.d27e4924.js"
         }
       ]
     },
@@ -170,34 +161,25 @@
         {
           "file": "assets/js/237.4c14c75f.js",
           "hash": "8399445645b0a9e5",
-          "publicPath": "/jutsu-docs/assets/js/237.4c14c75f.js"
+          "publicPath": "/assets/js/237.4c14c75f.js"
         }
       ]
     },
     "262": {
       "js": [
         {
-          "file": "assets/js/18c41134.756b3ceb.js",
-          "hash": "d7b12efbab7fe911",
-          "publicPath": "/jutsu-docs/assets/js/18c41134.756b3ceb.js"
+          "file": "assets/js/18c41134.159f35e6.js",
+          "hash": "3425020321a318b0",
+          "publicPath": "/assets/js/18c41134.159f35e6.js"
         }
       ]
     },
     "354": {
       "js": [
         {
-          "file": "assets/js/runtime~main.da1126ed.js",
-          "hash": "d8aa9afa1dddc47f",
-          "publicPath": "/jutsu-docs/assets/js/runtime~main.da1126ed.js"
-        }
-      ]
-    },
-    "365": {
-      "js": [
-        {
-          "file": "assets/js/9aa38c4c.56eebc8d.js",
-          "hash": "ce12968009720e93",
-          "publicPath": "/jutsu-docs/assets/js/9aa38c4c.56eebc8d.js"
+          "file": "assets/js/runtime~main.4866b0e8.js",
+          "hash": "ec096fc2b19788bd",
+          "publicPath": "/assets/js/runtime~main.4866b0e8.js"
         }
       ]
     },
@@ -206,7 +188,16 @@
         {
           "file": "assets/js/17896441.15cdda26.js",
           "hash": "62123b0f49a51c85",
-          "publicPath": "/jutsu-docs/assets/js/17896441.15cdda26.js"
+          "publicPath": "/assets/js/17896441.15cdda26.js"
+        }
+      ]
+    },
+    "518": {
+      "js": [
+        {
+          "file": "assets/js/6bb166bd.c9819158.js",
+          "hash": "5a5ec8fe79b816f9",
+          "publicPath": "/assets/js/6bb166bd.c9819158.js"
         }
       ]
     },
@@ -215,7 +206,7 @@
         {
           "file": "assets/js/c4f5d8e4.aa0da9fd.js",
           "hash": "e8d05a9f6b08e6a8",
-          "publicPath": "/jutsu-docs/assets/js/c4f5d8e4.aa0da9fd.js"
+          "publicPath": "/assets/js/c4f5d8e4.aa0da9fd.js"
         }
       ]
     },
@@ -224,7 +215,7 @@
         {
           "file": "assets/js/5e95c892.774f91d8.js",
           "hash": "d4435479b0d59ff0",
-          "publicPath": "/jutsu-docs/assets/js/5e95c892.774f91d8.js"
+          "publicPath": "/assets/js/5e95c892.774f91d8.js"
         }
       ]
     },
@@ -233,7 +224,7 @@
         {
           "file": "assets/js/658.710406e0.js",
           "hash": "e75588e0a21d6d7c",
-          "publicPath": "/jutsu-docs/assets/js/658.710406e0.js"
+          "publicPath": "/assets/js/658.710406e0.js"
         }
       ]
     },
@@ -242,25 +233,25 @@
         {
           "file": "assets/js/a7bd4aaa.bc226e7f.js",
           "hash": "26ef354a41a1a79e",
-          "publicPath": "/jutsu-docs/assets/js/a7bd4aaa.bc226e7f.js"
+          "publicPath": "/assets/js/a7bd4aaa.bc226e7f.js"
         }
       ]
     },
     "724": {
       "js": [
         {
-          "file": "assets/js/dff1c289.ad3de3e3.js",
-          "hash": "94eb0b9a280b78a6",
-          "publicPath": "/jutsu-docs/assets/js/dff1c289.ad3de3e3.js"
+          "file": "assets/js/dff1c289.483678ae.js",
+          "hash": "844fe27e91a72b18",
+          "publicPath": "/assets/js/dff1c289.483678ae.js"
         }
       ]
     },
     "736": {
       "js": [
         {
-          "file": "assets/js/e44a2883.b32c0bc8.js",
-          "hash": "2188089f1ac36a3e",
-          "publicPath": "/jutsu-docs/assets/js/e44a2883.b32c0bc8.js"
+          "file": "assets/js/e44a2883.9e64341c.js",
+          "hash": "9124800763d36e11",
+          "publicPath": "/assets/js/e44a2883.9e64341c.js"
         }
       ]
     },
@@ -269,43 +260,52 @@
         {
           "file": "assets/js/aba21aa0.bddde0da.js",
           "hash": "5fb13479fb13b320",
-          "publicPath": "/jutsu-docs/assets/js/aba21aa0.bddde0da.js"
+          "publicPath": "/assets/js/aba21aa0.bddde0da.js"
         }
       ]
     },
     "748": {
       "js": [
         {
-          "file": "assets/js/822bd8ab.e56acb1e.js",
-          "hash": "7ef41e3f9b885b44",
-          "publicPath": "/jutsu-docs/assets/js/822bd8ab.e56acb1e.js"
+          "file": "assets/js/822bd8ab.7ad443cc.js",
+          "hash": "9474ad60929de864",
+          "publicPath": "/assets/js/822bd8ab.7ad443cc.js"
         }
       ]
     },
     "792": {
       "js": [
         {
-          "file": "assets/js/main.767be0c0.js",
-          "hash": "e7c05c8ca414f9b9",
-          "publicPath": "/jutsu-docs/assets/js/main.767be0c0.js"
+          "file": "assets/js/main.83e9a0f8.js",
+          "hash": "019fa70de4f681f9",
+          "publicPath": "/assets/js/main.83e9a0f8.js"
         }
       ]
     },
-    "842": {
+    "845": {
       "js": [
         {
-          "file": "assets/js/c222238c.b6d09c84.js",
-          "hash": "84aba3398ea45df5",
-          "publicPath": "/jutsu-docs/assets/js/c222238c.b6d09c84.js"
+          "file": "assets/js/c8a4e95a.c5fbdb3e.js",
+          "hash": "c401a76fcb5ce429",
+          "publicPath": "/assets/js/c8a4e95a.c5fbdb3e.js"
+        }
+      ]
+    },
+    "849": {
+      "js": [
+        {
+          "file": "assets/js/0058b4c6.b4c3bdab.js",
+          "hash": "cd7e932a43ed21ea",
+          "publicPath": "/assets/js/0058b4c6.b4c3bdab.js"
         }
       ]
     },
     "863": {
       "js": [
         {
-          "file": "assets/js/f55d3e7a.e6df876e.js",
-          "hash": "5712dbd937f7b176",
-          "publicPath": "/jutsu-docs/assets/js/f55d3e7a.e6df876e.js"
+          "file": "assets/js/f55d3e7a.2e450a1f.js",
+          "hash": "070f9ff0111c4357",
+          "publicPath": "/assets/js/f55d3e7a.2e450a1f.js"
         }
       ]
     },
@@ -314,25 +314,25 @@
         {
           "file": "assets/css/styles.40769eb2.css",
           "hash": "12311834792ca6d3",
-          "publicPath": "/jutsu-docs/assets/css/styles.40769eb2.css"
+          "publicPath": "/assets/css/styles.40769eb2.css"
         }
       ]
     },
     "899": {
       "js": [
         {
-          "file": "assets/js/a09c2993.07053a4f.js",
-          "hash": "07acc99c74adf4f3",
-          "publicPath": "/jutsu-docs/assets/js/a09c2993.07053a4f.js"
+          "file": "assets/js/a09c2993.955be3a5.js",
+          "hash": "f5e93029bcd97c14",
+          "publicPath": "/assets/js/a09c2993.955be3a5.js"
         }
       ]
     },
     "953": {
       "js": [
         {
-          "file": "assets/js/1e4232ab.4722b48f.js",
-          "hash": "5fbbc99a43d3a393",
-          "publicPath": "/jutsu-docs/assets/js/1e4232ab.4722b48f.js"
+          "file": "assets/js/1e4232ab.96bcea1e.js",
+          "hash": "8a567a5d6543847d",
+          "publicPath": "/assets/js/1e4232ab.96bcea1e.js"
         }
       ]
     },
@@ -341,25 +341,25 @@
         {
           "file": "assets/js/14eb3368.b77a5f8a.js",
           "hash": "408f15db69b3e28e",
-          "publicPath": "/jutsu-docs/assets/js/14eb3368.b77a5f8a.js"
+          "publicPath": "/assets/js/14eb3368.b77a5f8a.js"
         }
       ]
     },
     "974": {
       "js": [
         {
-          "file": "assets/js/5c868d36.2c8545c7.js",
-          "hash": "7a062360caa8cd67",
-          "publicPath": "/jutsu-docs/assets/js/5c868d36.2c8545c7.js"
+          "file": "assets/js/5c868d36.df8207ec.js",
+          "hash": "a38593245803c3b6",
+          "publicPath": "/assets/js/5c868d36.df8207ec.js"
         }
       ]
     },
     "976": {
       "js": [
         {
-          "file": "assets/js/0e384e19.b21d222d.js",
-          "hash": "701f11b49cc8ad90",
-          "publicPath": "/jutsu-docs/assets/js/0e384e19.b21d222d.js"
+          "file": "assets/js/0e384e19.7363b1e7.js",
+          "hash": "fcb1cf851273c40a",
+          "publicPath": "/assets/js/0e384e19.7363b1e7.js"
         }
       ]
     }

@@ -1,6 +1,10 @@
 # Node modules
 node_modules/
 
+# Build files
+dist/
+build/
+
 # IntelliJ IDEA project files
 .idea/
 *.iml
@@ -18,3 +22,4 @@ yarn-error.log*
 
 # Ignore miscellaneous
 *.log
+*.docusaurus

@@ -1,77 +1,100 @@
 {
-  "/jutsu-docs/markdown-page-49e": {
-    "__comp": "1f391b9e",
+  "/__docusaurus/debug-5ff": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "a7456010"
-    },
-    "content": "393be207"
-  },
-  "/jutsu-docs/docs-bd7": {
-    "__comp": "5e95c892",
-    "__context": {
-      "plugin": "aba21aa0"
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
-  "/jutsu-docs/docs-0ae": {
-    "__comp": "a7bd4aaa",
-    "__props": "44a3bcc5"
-  },
-  "/jutsu-docs/docs-7f6": {
-    "__comp": "a94703ab"
-  },
-  "/jutsu-docs/docs/category/tutorial---basics-71d": {
-    "__comp": "14eb3368",
-    "__props": "c222238c"
-  },
-  "/jutsu-docs/docs/category/tutorial---extras-e20": {
-    "__comp": "14eb3368",
-    "__props": "9aa38c4c"
-  },
-  "/jutsu-docs/docs/intro-c66": {
-    "__comp": "17896441",
-    "content": "0e384e19"
-  },
-  "/jutsu-docs/docs/introduction-542": {
-    "__comp": "17896441",
-    "content": "a09c2993"
-  },
-  "/jutsu-docs/docs/tutorial-basics/congratulations-d7c": {
-    "__comp": "17896441",
-    "content": "822bd8ab"
-  },
-  "/jutsu-docs/docs/tutorial-basics/create-a-blog-post-e5e": {
-    "__comp": "17896441",
-    "content": "533a09ca"
-  },
-  "/jutsu-docs/docs/tutorial-basics/create-a-document-376": {
-    "__comp": "17896441",
-    "content": "1e4232ab"
-  },
-  "/jutsu-docs/docs/tutorial-basics/create-a-page-5d8": {
-    "__comp": "17896441",
-    "content": "5c868d36"
-  },
-  "/jutsu-docs/docs/tutorial-basics/deploy-your-site-1b0": {
-    "__comp": "17896441",
-    "content": "f55d3e7a"
-  },
-  "/jutsu-docs/docs/tutorial-basics/markdown-features-c7b": {
-    "__comp": "17896441",
-    "content": "18c41134"
-  },
-  "/jutsu-docs/docs/tutorial-extras/manage-docs-versions-c92": {
-    "__comp": "17896441",
-    "content": "dff1c289"
-  },
-  "/jutsu-docs/docs/tutorial-extras/translate-your-site-5ee": {
-    "__comp": "17896441",
-    "content": "e44a2883"
-  },
-  "/jutsu-docs/-2d9": {
-    "__comp": "c4f5d8e4",
+  "/__docusaurus/debug/config-5ba": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "a7456010"
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/content-a2b": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
     },
-    "config": "5e9f5e1a"
+    "__props": "__props---docusaurus-debug-content-3-c-0-be2"
+  },
+  "/__docusaurus/debug/globalData-c3c": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/metadata-156": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/registry-88c": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/routes-000": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/markdown-page-3d7": {
+    "__comp": "__comp---theme-mdx-page-1-f-3-b90",
+    "__context": {
+      "plugin": "plugin---markdown-pagea-74-7b5"
+    },
+    "content": "content---markdown-page-393-028"
+  },
+  "/-2e1": {
+    "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
+    "__context": {
+      "plugin": "plugin---markdown-pagea-74-7b5"
+    },
+    "config": "config---5-e-9-4f3"
+  },
+  "/-412": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---docsaba-d7c"
+    }
+  },
+  "/-cc8": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---22-d-307"
+  },
+  "/-4b6": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/get-started-986": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-get-started-748-17e"
+  },
+  "/intro-9b6": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-intro-0-e-3-be1"
+  },
+  "/introduction-636": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-introductiona-09-6b4"
+  },
+  "/links-129": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-linksff-3-cac"
+  },
+  "/platform-manual/overview-a24": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-platform-manual-overviewb-76-d23"
+  },
+  "/terminology-ebd": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-terminology-6-b-5-9ae"
+  },
+  "/tokenomics/overview-629": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-tokenomics-overviewe-2-f-bec"
   }
 }

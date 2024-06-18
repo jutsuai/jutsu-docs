@@ -3,104 +3,108 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/jutsu-docs/markdown-page',
-    component: ComponentCreator('/jutsu-docs/markdown-page', '49e'),
+    path: '/__docusaurus/debug',
+    component: ComponentCreator('/__docusaurus/debug', '5ff'),
     exact: true
   },
   {
-    path: '/jutsu-docs/docs',
-    component: ComponentCreator('/jutsu-docs/docs', 'bd7'),
+    path: '/__docusaurus/debug/config',
+    component: ComponentCreator('/__docusaurus/debug/config', '5ba'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/content',
+    component: ComponentCreator('/__docusaurus/debug/content', 'a2b'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/globalData',
+    component: ComponentCreator('/__docusaurus/debug/globalData', 'c3c'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/metadata',
+    component: ComponentCreator('/__docusaurus/debug/metadata', '156'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/registry',
+    component: ComponentCreator('/__docusaurus/debug/registry', '88c'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/routes',
+    component: ComponentCreator('/__docusaurus/debug/routes', '000'),
+    exact: true
+  },
+  {
+    path: '/markdown-page',
+    component: ComponentCreator('/markdown-page', '3d7'),
+    exact: true
+  },
+  {
+    path: '/',
+    component: ComponentCreator('/', '2e1'),
+    exact: true
+  },
+  {
+    path: '/',
+    component: ComponentCreator('/', '412'),
     routes: [
       {
-        path: '/jutsu-docs/docs',
-        component: ComponentCreator('/jutsu-docs/docs', '0ae'),
+        path: '/',
+        component: ComponentCreator('/', 'cc8'),
         routes: [
           {
-            path: '/jutsu-docs/docs',
-            component: ComponentCreator('/jutsu-docs/docs', '7f6'),
+            path: '/',
+            component: ComponentCreator('/', '4b6'),
             routes: [
               {
-                path: '/jutsu-docs/docs/category/tutorial---basics',
-                component: ComponentCreator('/jutsu-docs/docs/category/tutorial---basics', '71d'),
+                path: '/get-started',
+                component: ComponentCreator('/get-started', '986'),
                 exact: true,
-                sidebar: "tutorialSidebar"
+                sidebar: "docsSidebar"
               },
               {
-                path: '/jutsu-docs/docs/category/tutorial---extras',
-                component: ComponentCreator('/jutsu-docs/docs/category/tutorial---extras', 'e20'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                path: '/intro',
+                component: ComponentCreator('/intro', '9b6'),
+                exact: true
               },
               {
-                path: '/jutsu-docs/docs/intro',
-                component: ComponentCreator('/jutsu-docs/docs/intro', 'c66'),
+                path: '/introduction',
+                component: ComponentCreator('/introduction', '636'),
                 exact: true,
-                sidebar: "tutorialSidebar"
+                sidebar: "docsSidebar"
               },
               {
-                path: '/jutsu-docs/docs/introduction',
-                component: ComponentCreator('/jutsu-docs/docs/introduction', '542'),
+                path: '/links',
+                component: ComponentCreator('/links', '129'),
                 exact: true,
-                sidebar: "tutorialSidebar"
+                sidebar: "docsSidebar"
               },
               {
-                path: '/jutsu-docs/docs/tutorial-basics/congratulations',
-                component: ComponentCreator('/jutsu-docs/docs/tutorial-basics/congratulations', 'd7c'),
+                path: '/platform-manual/overview',
+                component: ComponentCreator('/platform-manual/overview', 'a24'),
                 exact: true,
-                sidebar: "tutorialSidebar"
+                sidebar: "docsSidebar"
               },
               {
-                path: '/jutsu-docs/docs/tutorial-basics/create-a-blog-post',
-                component: ComponentCreator('/jutsu-docs/docs/tutorial-basics/create-a-blog-post', 'e5e'),
+                path: '/terminology',
+                component: ComponentCreator('/terminology', 'ebd'),
                 exact: true,
-                sidebar: "tutorialSidebar"
+                sidebar: "docsSidebar"
               },
               {
-                path: '/jutsu-docs/docs/tutorial-basics/create-a-document',
-                component: ComponentCreator('/jutsu-docs/docs/tutorial-basics/create-a-document', '376'),
+                path: '/tokenomics/overview',
+                component: ComponentCreator('/tokenomics/overview', '629'),
                 exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/jutsu-docs/docs/tutorial-basics/create-a-page',
-                component: ComponentCreator('/jutsu-docs/docs/tutorial-basics/create-a-page', '5d8'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/jutsu-docs/docs/tutorial-basics/deploy-your-site',
-                component: ComponentCreator('/jutsu-docs/docs/tutorial-basics/deploy-your-site', '1b0'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/jutsu-docs/docs/tutorial-basics/markdown-features',
-                component: ComponentCreator('/jutsu-docs/docs/tutorial-basics/markdown-features', 'c7b'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/jutsu-docs/docs/tutorial-extras/manage-docs-versions',
-                component: ComponentCreator('/jutsu-docs/docs/tutorial-extras/manage-docs-versions', 'c92'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/jutsu-docs/docs/tutorial-extras/translate-your-site',
-                component: ComponentCreator('/jutsu-docs/docs/tutorial-extras/translate-your-site', '5ee'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                sidebar: "docsSidebar"
               }
             ]
           }
         ]
       }
     ]
-  },
-  {
-    path: '/jutsu-docs/',
-    component: ComponentCreator('/jutsu-docs/', '2d9'),
-    exact: true
   },
   {
     path: '*',
