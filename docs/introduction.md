@@ -31,7 +31,7 @@ The Jutsu platform is built to serve and empower three primary types of particip
 
 ### Builders
 
-- **Builder Studio: As a Builder, you have access to our creative core, which provides intuitive tools and workflows for creating, configuring, deploying, and monetizing intelligent agents. Whether you are using low-code/no-code solutions or diving deep into development, the Builder Studio is designed to support your journey from concept to deployment.
+- **Builder Studio**: As a Builder, you have access to our creative core, which provides intuitive tools and workflows for creating, configuring, deploying, and monetizing intelligent agents. Whether you are using low-code/no-code solutions or diving deep into development, the Builder Studio is designed to support your journey from concept to deployment.
 
 - **Monetization Opportunities**: List your agents in the Marketplace Hub and earn micro-royalties based on usage and engagement. The platform ensures you receive fair compensation for your contributions, providing financial incentives that encourage continuous innovation.
 
