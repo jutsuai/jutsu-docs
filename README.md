@@ -5,6 +5,7 @@ Welcome to the Jutsu Docs site! This documentation provides comprehensive inform
 ## Table of Contents
 
 - [Introduction](./introduction/README.md)
+- [Get Started](./get-started/README.md)
 - [Platform Manual](platform-manual/README.md)
 - [Tokenomics](./tokenomics/README.md)
   - [Overview](./tokenomics/overview.md)

@@ -1,7 +1,7 @@
 # Table of Contents
 
-* [Home](README.md)
 * [Introduction](introduction/README.md)
+* [Get Started](get-started/README.md)
 * [Platform Manual](platform-manual/README.md)
 * [Tokenomics](tokenomics/README.md)
   * [Overview](tokenomics/overview.md)
