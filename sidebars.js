@@ -17,22 +17,8 @@ const sidebars = {
   docsSidebar: [
     'introduction',
     'get-started',
-    {
-      type: 'category',
-      label: 'Platform Manual',
-      items: [
-        'platform-manual/overview'
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Tokenomics',
-      items: [
-        'tokenomics/overview'
-      ]
-    },
-    'terminology',
-    'links'
+    'tokenomics',
+    'terminology'
   ],
 
   // But you can create a sidebar manually
