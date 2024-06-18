@@ -22,4 +22,4 @@ yarn-error.log*
 
 # Ignore miscellaneous
 *.log
-*.docusaurus
+.docusaurus/
