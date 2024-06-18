@@ -5,16 +5,7 @@ Welcome to the Jutsu Docs site! This documentation provides comprehensive inform
 ## Table of Contents
 
 - [Introduction](./introduction/README.md)
-  - [Overview](./introduction/overview.md)
-  - [Vision and Mission](./introduction/vision-and-mission.md)
-  - [Pitch](./introduction/pitch.md)
-  - [Focus](./introduction/focus.md)
-- [Platform](./platform/README.md)
-  - [Overview](./platform/overview.md)
-  - [Challenges](./platform/challenges.md)
-  - [Objectives](./platform/objectives.md)
-  - [Participants](./platform/participants.md)
-  - [Architecture](./platform/architecture.md)
+- [Platform Manual](platform-manual/README.md)
 - [Tokenomics](./tokenomics/README.md)
   - [Overview](./tokenomics/overview.md)
   - [Tokenomic Foundations](./tokenomics/foundations.md)
@@ -22,17 +13,13 @@ Welcome to the Jutsu Docs site! This documentation provides comprehensive inform
   - [Incentives and Rewards](./tokenomics/incentives-and-rewards.md)
   - [Economic Sustainability and Growth Strategies](./tokenomics/economic-sustainability-and-growth-strategies.md)
   - [Implementation Strategy](./tokenomics/implementation-strategy.md)
-- [Taxonomy](./taxonomy/README.md)
-  - [Key Terms](./taxonomy/key-terms.md)
-  - [Participants](./taxonomy/participants.md)
-  - [Platform Components](./taxonomy/platform-components.md)
-  - [Tokenomics](./taxonomy/tokenomics.md)
-  - [Workflows](./taxonomy/workflows.md)
+- [Terminology](terminology/README.md)
+- [Links](links/README.md)
 
-## Getting Started
+## Get Started
 
-To get started with the Jutsu platform, please refer to the [Introduction](./introduction/README.md) section to understand the vision and mission of Jutsu. Follow through the [Platform](./platform/README.md) and [Tokenomics](./tokenomics/README.md) sections for in-depth details about the platform's components and economic model.
+For an overview of Jutsu, checkout the [Introduction](./introduction/README.md) page. Or jump right in and start learning about the platform by reading the [Get Started](./platform-manual/get-started.md) guide.
 
 ## Community and Support
 
-For more information and support, join our community and participate in discussions. Stay updated with the latest developments and contribute to the growth of the Jutsu ecosystem.
+For more information and support, join our [community](./links/README.md) and participate in discussions. Stay updated with the latest developments and contribute to the growth of the Jutsu ecosystem.
