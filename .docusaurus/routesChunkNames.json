@@ -1,100 +1,57 @@
 {
-  "/__docusaurus/debug-5ff": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/config-5ba": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/content-a2b": {
-    "__comp": "__comp---theme-debug-contentba-8-ce7",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    },
-    "__props": "__props---docusaurus-debug-content-3-c-0-be2"
-  },
-  "/__docusaurus/debug/globalData-c3c": {
-    "__comp": "__comp---theme-debug-global-dataede-0fa",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/metadata-156": {
-    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/registry-88c": {
-    "__comp": "__comp---theme-debug-registry-679-501",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/routes-000": {
-    "__comp": "__comp---theme-debug-routes-946-699",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
   "/markdown-page-3d7": {
-    "__comp": "__comp---theme-mdx-page-1-f-3-b90",
+    "__comp": "1f391b9e",
     "__context": {
-      "plugin": "plugin---markdown-pagea-74-7b5"
+      "plugin": "a7456010"
     },
-    "content": "content---markdown-page-393-028"
+    "content": "393be207"
   },
   "/-2e1": {
-    "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
+    "__comp": "c4f5d8e4",
     "__context": {
-      "plugin": "plugin---markdown-pagea-74-7b5"
+      "plugin": "a7456010"
     },
-    "config": "config---5-e-9-4f3"
+    "config": "5e9f5e1a"
   },
   "/-412": {
-    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__comp": "5e95c892",
     "__context": {
-      "plugin": "plugin---docsaba-d7c"
+      "plugin": "aba21aa0"
     }
   },
   "/-cc8": {
-    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
-    "__props": "__props---22-d-307"
+    "__comp": "a7bd4aaa",
+    "__props": "22dd74f7"
   },
   "/-4b6": {
-    "__comp": "__comp---theme-doc-roota-94-67a"
+    "__comp": "a94703ab"
   },
   "/get-started-986": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-get-started-748-17e"
+    "__comp": "17896441",
+    "content": "7485ae2a"
   },
   "/intro-9b6": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-intro-0-e-3-be1"
+    "__comp": "17896441",
+    "content": "0e384e19"
   },
   "/introduction-636": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-introductiona-09-6b4"
+    "__comp": "17896441",
+    "content": "a09c2993"
   },
   "/links-129": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-linksff-3-cac"
+    "__comp": "17896441",
+    "content": "ff3a37c9"
   },
   "/platform-manual/overview-a24": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-platform-manual-overviewb-76-d23"
+    "__comp": "17896441",
+    "content": "b76f0e8e"
   },
   "/terminology-ebd": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-terminology-6-b-5-9ae"
+    "__comp": "17896441",
+    "content": "6b50e60a"
   },
   "/tokenomics/overview-629": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tokenomics-overviewe-2-f-bec"
+    "__comp": "17896441",
+    "content": "e2fce511"
   }
 }
