@@ -5,7 +5,7 @@
   "scripts": {
     "deploy": "docusaurus deploy",
     "build": "docusaurus build",
-    "start": "docusaurus start"""
+    "start": "docusaurus start"
   },
   "keywords": [],
   "author": "",
