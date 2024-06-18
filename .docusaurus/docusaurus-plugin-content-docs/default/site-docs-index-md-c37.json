@@ -1,0 +1,14 @@
+{
+  "id": "index",
+  "title": "Welcome to Jutsu Documentation",
+  "description": "Welcome to the Jutsu Documentation. This is the starting point for learning about our platform.",
+  "source": "@site/docs/index.md",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/docs/docs/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}
