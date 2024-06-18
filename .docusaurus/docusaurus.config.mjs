@@ -4,11 +4,11 @@
  * Modify the docusaurus.config.js file at your site's root instead.
  */
 export default {
-  "title": "My Site",
-  "tagline": "Dinosaurs are cool",
+  "title": "Jutsu Documentation",
+  "tagline": "The home of Jutsu thoughts and ideas.",
   "favicon": "img/favicon.ico",
   "url": "https://docs.jutsu.ai",
-  "baseUrl": "/",
+  "baseUrl": "/jutsu-docs/",
   "organizationName": "jutsuai",
   "projectName": "jutsu-docs",
   "onBrokenLinks": "throw",

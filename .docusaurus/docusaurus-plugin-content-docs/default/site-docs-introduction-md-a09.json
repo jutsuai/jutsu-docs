@@ -1,19 +1,20 @@
 {
   "id": "introduction",
   "title": "Introduction",
-  "description": "Welcome to the Jutsu Documentation. This is the starting point for learning about our platform.",
+  "description": "...",
   "source": "@site/docs/introduction.md",
   "sourceDirName": ".",
   "slug": "/introduction",
-  "permalink": "/docs/docs/introduction",
+  "permalink": "/jutsu-docs/docs/introduction",
   "draft": false,
   "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/introduction.md",
   "tags": [],
   "version": "current",
   "frontMatter": {},
-  "sidebar": "docs",
-  "next": {
-    "title": "Get Started",
-    "permalink": "/docs/docs/get-started"
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Translate your site",
+    "permalink": "/jutsu-docs/docs/tutorial-extras/translate-your-site"
   }
 }
