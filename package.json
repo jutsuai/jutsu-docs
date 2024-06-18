@@ -1,0 +1,18 @@
+{
+  "name": "jutsu-docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "docusaurus deploy",
+    "build": "docusaurus build",
+    "start": "docusaurus start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@docusaurus/core": "^3.4.0",
+    "@docusaurus/preset-classic": "^3.4.0"
+  }
+}
