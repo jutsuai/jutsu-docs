@@ -18,7 +18,11 @@ const sidebars = {
     'introduction',
     'get-started',
     'tokenomics',
-    'terminology'
+    'user-manual',
+    'builder-manual',
+    'terminology',
+    'support',
+    'faq',
   ],
 
   // But you can create a sidebar manually
