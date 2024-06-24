@@ -10,10 +10,7 @@ title: FAQ
 ### What is Jutsu?
 _Coming soon_
 
-### How does Jutsu work?
-_Coming soon_
-
-### What are intelligent agents?
+### What are AI Workers?
 _Coming soon_
 
 ### How can I get started with Jutsu?

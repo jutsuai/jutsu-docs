@@ -34,14 +34,14 @@ The Jutsu Ecosystem addresses significant challenges in the AI space, fostering 
 
 ## Vision Behind Jutsu
 
-The vision of the Jutsu is to create an empowering ecosystem where intelligent agents enhance human capabilities rather than replace them. By integrating AI seamlessly into daily workflows, Jutsu aims to foster a future where technology augments productivity and creativity, allowing individuals and organizations to achieve more.
+The vision of the Jutsu is to create an empowering ecosystem where AI Workers (intelligent agents) enhance human capabilities rather than replace them. By integrating AI seamlessly into daily workflows, Jutsu aims to foster a future where technology augments productivity and creativity, allowing individuals and organizations to achieve more.
 
 At Jutsu, we emphasize:
 
-- **Empowering Human Potential**: Our ecosystem focuses on leveraging intelligent agents to amplify human skills and creativity. By automating routine tasks and providing advanced tools, Jutsu enables users to focus on higher-value activities, enhancing overall productivity and job satisfaction.
+- **Empowering Human Potential**: Our ecosystem focuses on leveraging AI Workers (intelligent agents) to amplify human skills and creativity. By automating routine tasks and providing advanced tools, Jutsu enables users to focus on higher-value activities, enhancing overall productivity and job satisfaction.
 
 
-- **Dynamic Ecosystem Incentives**: We establish robust incentive mechanisms that reward meaningful contributions from all participants. Whether through building, curating, or utilizing intelligent agents, every participant is fairly rewarded, promoting sustained engagement and continuous innovation.
+- **Dynamic Ecosystem Incentives**: We establish robust incentive mechanisms that reward meaningful contributions from all participants. Whether through building, curating, or simply using AI Workers, every participant is fairly rewarded, promoting sustained engagement and continuous innovation.
 
 
 - **Autonomy and Flexibility**: Jutsu provides users with the freedom to choose from a variety of AI models and services, ensuring flexibility and avoiding vendor lock-in. This autonomy allows users to select the best tools for their specific needs, fostering a diverse and adaptable ecosystem.
@@ -51,14 +51,14 @@ At Jutsu, we emphasize:
 
 ## Core Principles of the Jutsu Ecosystem
 
-The Jutsu ecosystem is built to enhance the user experience, empower creators, and foster collaborative innovation. These core principles drive our technological vision and ensure a dynamic and inclusive environment for all participants:
+The Jutsu ecosystem is designed to enhance user experience, empower creators, and foster collaborative innovation. These core principles drive the ecosystem’s vision, ensuring a dynamic and inclusive environment for all participants:
 
-- **User-Centric Experience**: At its core, Jutsu prioritizes the users who integrate intelligent agents into their daily workflows to enhance productivity and efficiency. The Marketplace serves as the central hub for discovering and utilizing a diverse array of AI solutions. By offering seamless access to high-quality agents, Jutsu ensures that users can effortlessly find and implement the tools they need to work smarter, not harder. This focus on user experience drives the adoption of innovative solutions that significantly improve everyday tasks.
-
-
-- **Empowerment through Creation**: The Builder Studio is the heart of Jutsu’s creative ecosystem, providing intuitive low-code and no-code tools that democratize the development of intelligent agents. This component allows a broad spectrum of users to design, configure, and deploy AI solutions, fostering a diverse community of creators. By simplifying the development process, the Builder Studio ensures that anyone with a vision can contribute to the ecosystem, driving continuous innovation and creativity.
+- **User-Centric Experience**: Jutsu prioritizes users by integrating AI Workers (intelligent agents) into daily workflows, enhancing productivity and efficiency. The Marketplace serves as the central hub for discovering diverse AI solutions, ensuring seamless access to high-quality AI Workers. This user-focused approach enables effortless implementation of tools, significantly improving everyday tasks.
 
 
-- **Collaborative Innovation and Quality Assurance**: The Innovation and Community Portals embody Jutsu’s commitment to collaboration and high standards. These portals facilitate community-driven projects, robust verification processes, and dynamic reward systems that incentivize meaningful contributions. High-reputation builders and curators ensure the quality and safety of the agents, maintaining the ecosystem’s integrity. This collaborative environment promotes sustained engagement, continuous improvement, and fair value distribution, ensuring that all participants benefit from the ecosystem’s growth.
+- **Empowerment through Creation**: The Builder Studio is the heart of Jutsu’s creative ecosystem, providing intuitive no-code tools that democratize the development of AI Workers (intelligent agents). This ecosystem allows builders of all skill levels to design, configure, and deploy AI solutions, fostering a diverse community of creators. Simplifying the development process ensures continuous innovation and creativity from a broad spectrum of contributors.
+
+
+- **Collaborative Innovation and Quality Assurance**: The Innovation and Community Portals reflect Jutsu’s commitment to collaboration and high standards. These portals facilitate community-driven projects, robust verification processes, and dynamic reward systems that incentivize meaningful contributions. High-reputation builders and curators maintain AI Worker (agent) quality and safety, ensuring platform integrity. This collaborative environment promotes sustained engagement, continuous improvement, and fair value distribution for all participants.
 
 At Jutsu, our core principles work together to create an ecosystem that enhances user productivity, empowers creators, and fosters a collaborative community. Join us in building a future where intelligent agents seamlessly integrate into everyday workflows, driving innovation and shared success.

@@ -11,9 +11,6 @@ _Coming soon_
 ### Email Support
 _Coming soon_
 
-### Live Chat Support
-_Coming soon_
-
 ### Community Forums
 _Coming soon_
 
@@ -24,30 +21,6 @@ _Coming soon_
 _Coming soon_
 
 ### Feature Requests
-_Coming soon_
-
-## Documentation
-_Coming soon_
-
-### User Manual
-_Coming soon_
-
-### Developer Manual
-_Coming soon_
-
-### API Reference
-_Coming soon_
-
-## Frequently Asked Questions
-_Coming soon_
-
-### General Questions
-_Coming soon_
-
-### Technical Questions
-_Coming soon_
-
-### Tokenomics Questions
 _Coming soon_
 
 ## Additional Resources
