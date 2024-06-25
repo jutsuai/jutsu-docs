@@ -70,53 +70,53 @@ The Jutsu Ecosystem comprises several core systems, each integral to its functio
 
 The Consumers Portal is the gateway for end-users to explore and utilize AI Workers. It provides a seamless and intuitive interface for discovering, accessing, and managing AI Workers tailored to various tasks.
 
-**Discover and Access**: Advanced search and categorization features help consumers find AI Workers that fit their needs.  
-**User Experience**: A user-friendly interface ensures easy navigation and interaction with AI Workers.  
-**Subscription Management**: Consumers can manage their subscriptions and access multiple AI Workers under a unified plan.  
-**Feedback and Ratings**: Consumers can provide feedback and rate AI Workers, ensuring continuous quality improvement.
+- **Discover and Access**: Advanced search and categorization features help consumers find AI Workers that fit their needs.  
+- **User Experience**: A user-friendly interface ensures easy navigation and interaction with AI Workers.  
+- **Subscription Management**: Consumers can manage their subscriptions and access multiple AI Workers under a unified plan.  
+- **Feedback and Ratings**: Consumers can provide feedback and rate AI Workers, ensuring continuous quality improvement.
 
 ### Builder Studio
 
 The Builder Studio is the creative core of the Jutsu Ecosystem, offering builders the tools they need to create, configure, deploy, and monetize AI Workers.
 
-**Agent Editor**: A web-based integrated development environment that supports low-code/no-code builders and experienced developers. Includes visual tools for designing AI Workers, configuring models, and integrating data sources.  
-**Intelligent Tools**: Specialized tools for configuring AI models, integrating APIs, and defining multi-agent collaborations.  
-**API and Data Source Integration**: Tools to connect various APIs and data sources, enabling AI Workers to retrieve and process data from multiple external systems.  
-**Multi-Agent Collaboration**: Features to design and manage interactions and workflows between multiple AI Workers.  
-**Guided Workflow**: AI-driven workflows that guide builders through the creation process, from initial configuration to deployment.  
-**Version Control and Collaboration**: Integration with Git and other version control systems for managing project versions and facilitating collaboration among builders.
+- **Agent Editor**: A web-based integrated development environment that supports low-code/no-code builders and experienced developers. Includes visual tools for designing AI Workers, configuring models, and integrating data sources.  
+- **Intelligent Tools**: Specialized tools for configuring AI models, integrating APIs, and defining multi-agent collaborations.  
+- **API and Data Source Integration**: Tools to connect various APIs and data sources, enabling AI Workers to retrieve and process data from multiple external systems.  
+- **Multi-Agent Collaboration**: Features to design and manage interactions and workflows between multiple AI Workers.  
+- **Guided Workflow**: AI-driven workflows that guide builders through the creation process, from initial configuration to deployment.  
+- **Version Control and Collaboration**: Integration with Git and other version control systems for managing project versions and facilitating collaboration among builders.
 
 ### Marketplace
 
 The AI Worker Marketplace allows builders to publish and monetize their AI Workers, facilitating the reuse and composition of existing projects within the Jutsu Ecosystem.
 
-**Publishing and Monetization**: Builders can list their AI Workers in the marketplace, setting usage fees and earning micro-royalties based on interactions.  
-**Discoverability**: Advanced search and categorization features help consumers find and utilize AI Workers tailored to their specific needs.  
-**Consumer Access**: Provides a user-friendly interface for consumers to browse, subscribe to, and use various AI Workers.  
-**User Feedback and Ratings**: Consumers can provide feedback and ratings on AI Workers, ensuring quality and reliability in the marketplace.  
-**Subscription Management**: Supports various subscription models, enabling consumers to access multiple AI Workers under a unified subscription plan.
+- **Publishing and Monetization**: Builders can list their AI Workers in the marketplace, setting usage fees and earning micro-royalties based on interactions.  
+- **Discoverability**: Advanced search and categorization features help consumers find and utilize AI Workers tailored to their specific needs.  
+- **Consumer Access**: Provides a user-friendly interface for consumers to browse, subscribe to, and use various AI Workers.  
+- **User Feedback and Ratings**: Consumers can provide feedback and ratings on AI Workers, ensuring quality and reliability in the marketplace.  
+- **Subscription Management**: Supports various subscription models, enabling consumers to access multiple AI Workers under a unified subscription plan.
 
 ### Innovation Portal
 
 The Innovation Portal focuses on community-driven projects, quality assurance, and dynamic reward systems, ensuring continuous improvement and engagement within the ecosystem.
 
-**Community-Requested Projects**: Enables users to list bounties for specific projects or AI Worker improvements.  
-**Qualification Criteria**: Users specify the requirements for bounty acceptance.  
-**Builder Participation**: Builders can accept bounties, contributing to the platform while earning rewards.  
-**Verification and Approval**: Curators conduct thorough verification processes to ensure AI Workers are safe, reliable, and effective.  
-**Quality Assurance**: Curators review and approve AI Worker submissions, maintaining high standards.  
-**Appeal Handling**: Curators manage the appeal process, addressing disputes and ensuring fair outcomes.  
-**Performance Rewards**: Curators are rewarded based on their platform-wide reputation, influenced by the accuracy and reliability of their reviews.  
-**Continuous Improvement**: Curators provide feedback to builders for improving AI Worker quality, fostering an environment of continuous enhancement and innovation.
+- **Community-Requested Projects**: Enables users to list bounties for specific projects or AI Worker improvements.  
+- **Qualification Criteria**: Users specify the requirements for bounty acceptance.  
+- **Builder Participation**: Builders can accept bounties, contributing to the platform while earning rewards.  
+- **Verification and Approval**: Curators conduct thorough verification processes to ensure AI Workers are safe, reliable, and effective.  
+- **Quality Assurance**: Curators review and approve AI Worker submissions, maintaining high standards.  
+- **Appeal Handling**: Curators manage the appeal process, addressing disputes and ensuring fair outcomes.  
+- **Performance Rewards**: Curators are rewarded based on their platform-wide reputation, influenced by the accuracy and reliability of their reviews.  
+- **Continuous Improvement**: Curators provide feedback to builders for improving AI Worker quality, fostering an environment of continuous enhancement and innovation.
 
 ### Community Portal
 
 The Community Portal provides a space for platform governance, user participation, and transparency, fostering a vibrant and engaged community.
 
-**Platform Governance**: Provides transparency and enables participation in platform governance through voting and discussion forums.  
-**User Participation**: Features leaderboards, contribution tracking, and community events to encourage and recognize active involvement from users and builders.  
-**Transparency**: Offers a clear view into the governance processes and user contributions across the platform, ensuring accountability and trust.  
-**Educational Resources**: Hosts tutorials, documentation, and community-led workshops to help new users and builders get started and stay engaged.
+- **Platform Governance**: Provides transparency and enables participation in platform governance through voting and discussion forums.  
+- **User Participation**: Features leaderboards, contribution tracking, and community events to encourage and recognize active involvement from users and builders.  
+- **Transparency**: Offers a clear view into the governance processes and user contributions across the platform, ensuring accountability and trust.  
+- **Educational Resources**: Hosts tutorials, documentation, and community-led workshops to help new users and builders get started and stay engaged.
 
 ## Subscriptions
 
