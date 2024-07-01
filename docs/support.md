@@ -6,7 +6,7 @@ title: Support
 # Support
 
 ## Support Channels
-_Coming soon_
+_Whatever Coming soon_
 
 ### Email Support
 _Coming soon_
