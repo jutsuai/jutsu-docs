@@ -21,6 +21,7 @@ const sidebars = {
     'terminology',
     'support',
     'faq',
+    'architecture',
   ],
 
   // But you can create a sidebar manually
