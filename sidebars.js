@@ -20,8 +20,7 @@ const sidebars = {
     'tokenomics',
     'terminology',
     'support',
-    'faq',
-    'architecture',
+    'faq'
   ],
 
   // But you can create a sidebar manually

@@ -52,6 +52,19 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'private',
+        path: 'private-docs',
+        routeBasePath: 'private-docs',
+        include: ['**/*.md'],
+        // sidebarPath: './sidebarsPrivate.js', // Optional: If you have a separate sidebar config for private docs
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
