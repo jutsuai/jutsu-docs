@@ -5,7 +5,7 @@ title: Introduction
 
 # Introduction
 
-Welcome to Jutsu!
+**Welcome to Jutsu!**
 
 Jutsu transforms how users tackle daily tasks by seamlessly integrating AI apps into their lives, simplifying complex activities, and significantly boosting productivity and efficiency. These AI apps enable users to automate and optimize a wide range of functions, helping to achieve faster, cheaper, and more effective results.
 
