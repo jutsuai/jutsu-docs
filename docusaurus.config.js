@@ -58,7 +58,7 @@ const config = {
       {
         id: 'private',
         path: 'private-docs',
-        routeBasePath: 'private-docs',
+        routeBasePath: 'private',
         include: ['**/*.md'],
         // sidebarPath: './sidebarsPrivate.js', // Optional: If you have a separate sidebar config for private docs
       },

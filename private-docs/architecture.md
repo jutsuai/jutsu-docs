@@ -100,9 +100,9 @@ The system supports:
 
 ### Entity Diagram
 
-The below is an image illustrating the flow of entities and their relationships in the Jutsu App Hub architecture.
+The below diagram indicates high-level entity relationships within the database schema.
 
-![Entity Flow Diagram](../static/img/docs/architecture_database_flowchart.png)
+![Entity Diagram](../static/img/docs/architecture_database_flowchart.png)
 
 ### Entity Table
 
