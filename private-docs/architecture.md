@@ -5,12 +5,68 @@ title: Architecture
 
 ## Overview
 
-The Jutsu "App Hub" architecture is designed to provide a comprehensive and dynamic platform for creating, managing, and interacting with AI agents and their associated contexts. 
+The Jutsu architecture is designed to provide a comprehensive and dynamic platform for creating, managing, and interacting with AI agents and their associated contexts.
 
+## Core Components
 
-## Core Features
+### Orchestration API
 
-_Coming soon..._
+The Orchestration API serves as the central interface and business logic layer for interacting with and managing the database. It coordinates operations across different components of the system and consists of several subsystems:
+
+#### User Management Subsystem
+Handles all operations related to user accounts, roles, and permissions.
+
+- Manages CRUD operations for users.
+- Ensures proper authentication and authorization.
+- Manages user roles and permissions.
+
+#### Agent Management Subsystem
+Provides comprehensive functionality for creating, configuring, and managing AI agents.
+
+- Supports the definition of prompts.
+- Manages the selection of models and linking of tools.
+- Updates agent configurations.
+- Manages agent subscriptions and permissions.
+
+#### Conversation Management Subsystem
+Handles the management of interactions between users and agents.
+
+- Maintains conversation context.
+- Stores and retrieves conversation history.
+- Supports conversation grouping.
+- Manages conversation workflows.
+
+#### Analytics Subsystem
+Captures events and usage data across the platform to monitor interactions and performance.
+
+- Collects and stores analytics data.
+- Provides reporting and insights.
+- Supports monitoring and alerting based on defined metrics.
+
+#### File Management Subsystem
+Handles the storage and management of multi-modal content linked to conversations and agents.
+
+- Manages file upload, storage, and retrieval.
+- Links files to conversations and agents.
+- Integrates with the RAG Pipeline for vectorizing file content.
+
+### RAG Pipeline & API
+
+The Retrieval-Augmented Generation (RAG) Pipeline and API handle all operations related to retrieval-augmented generation. This component integrates with vector databases and processes vectorized data to enhance the generation of AI responses.
+
+- Manages the vectorized representations of data (files, conversations, etc.).
+- Performs efficient retrieval operations to augment AI response generation.
+- Integrates with embedding models to generate and update vector representations.
+- Provides APIs for querying and managing vectors.
+
+### Integrations API
+
+The Integrations API serves as the interface and registry for tools, enabling agents to perform specific tasks or access external services.
+
+- Manages the registry of available tools.
+- Provides interfaces for agents to invoke and interact with tools.
+- Handles the execution of tool operations and returns results to agents.
+- Supports integration with external services and APIs.
 
 ## Database Schema Overview
 
@@ -19,28 +75,6 @@ _Coming soon..._
 The below diagram indicates high-level entity relationships within the database schema.
 
 ![Entity Diagram](../static/img/docs/architecture_database_flowchart.png)
-
-### Entity List
-
-- **[users](#users)**: Central to the system, mapping all user interactions.
-- **[user_roles](#user-roles)**: Defines different user roles within the platform.
-- **[user_permissions](#user-permissions)**: Defines different user permissions that can be assigned to roles.
-- **[user_role_permissions](#user-role-permissions)**: Links user roles to user permissions.
-- **[agents](#agents)**: Different agents that can be created and managed within the platform.
-- **[agent_configs](#agent-configs)**: Custom configuration details for agents, including frontend UX and other arbitrary key/value pairs.
-- **[agent_subscriptions](#agent-subscriptions)**: Manages user subscriptions to agents, tracking which users have access to which agents.
-- **[prompts](#prompts)**: Stores reusable prompt engineering templates, linked to users and agents.
-- **[models](#models)**: Stores model details, linked to agents.
-- **[tools](#tools)**: Represents tools that agents can use, linked to agents.
-- **[conversations](#conversations)**: Represents individual interactions between a user and an agent, linked to users and agents.
-- **[messages](#messages)**: Represents individual message exchanges within a conversation.
-- **[conversation_groups](#conversation_groups)**: Groups of linked conversations that share a common memory and context, linked to agents.
-- **[conversation_group_memberships](#conversation_group_memberships)**: Manages and organizes how conversations are linked together within conversation groups.
-- **[files](#files)**: Manages multi-modal content, linked to users, conversations, and agents.
-- **[file_conversations](#file_conversations)**: Links files to conversations, enabling files to be part of multiple conversation contexts.
-- **[file_agents](#file_agents)**: Links files to agents, enabling files to be part of an agent's default knowledge base.
-- **[vectors](#vectors)**: Stores vectorized representations of files for efficient retrieval and use in the RAG (Retrieval-Augmented Generation) system.
-- **[analytics](#analytics)**: Captures events and usage data across the system to monitor interactions and performance.
 
 ### Entity Reference
 
@@ -66,7 +100,7 @@ The below diagram indicates high-level entity relationships within the database 
 | [vectors](#vectors)                                               | Stores vectorized representations of files for efficient retrieval and use in the RAG system. | `vector_id`         | `entity_id` referencing `files`                                                                                   |
 | [analytics](#analytics)                                           | Captures events and usage data across the system.                                             | `id`                | `conversation_id` referencing `conversations`, `user_id` referencing `users`, `agent_id` referencing `agents`, `message_id` referencing `messages` |
 
-### Database Schema Definitions
+## Database Entity Definitions
 
 ### Users
 
