@@ -23,6 +23,9 @@ The below diagram indicates high-level entity relationships within the database 
 ### Entity List
 
 - **[users](#users)**: Central to the system, mapping all user interactions.
+- **[user_roles](#user-roles)**: Defines different user roles within the platform.
+- **[user_permissions](#user-permissions)**: Defines different user permissions that can be assigned to roles.
+- **[user_role_permissions](#user-role-permissions)**: Links user roles to user permissions.
 - **[agents](#agents)**: Different agents that can be created and managed within the platform.
 - **[agent_configs](#agent-configs)**: Custom configuration details for agents, including frontend UX and other arbitrary key/value pairs.
 - **[agent_subscriptions](#agent-subscriptions)**: Manages user subscriptions to agents, tracking which users have access to which agents.
@@ -41,24 +44,27 @@ The below diagram indicates high-level entity relationships within the database 
 
 ### Entity Reference
 
-| Table Name               | Description                                                                                     | Primary Key         | Foreign Keys                                                                                                       |
-|--------------------------|-------------------------------------------------------------------------------------------------|---------------------|-------------------------------------------------------------------------------------------------------------------|
-| users                    | Individuals who use the platform.                                                               | `user_id`           | `plan_id` referencing `price_plans`                                                                               |
-| agents                   | Different agents that can be created and managed within the platform.                           | `agent_id`          | `prompt_id` referencing `prompts`, `model_id` referencing `models`, `tool_ids` referencing `tools`, `vectors_id` referencing `vectors`, `agent_config_id` referencing `agent_configs`, `created_by` referencing `users` |
-| agent_configs            | Custom configuration details for agents.                                                        | `agent_config_id`   | -                                                                                                                 |
-| agent_subscriptions      | Tracks which users are subscribed to which agents.                                               | `subscription_id`   | `user_id` referencing `users`, `agent_id` referencing `agents`, `invited_by` referencing `users`                 |
-| prompts                  | Templates for conversations that should be had with the language model.                         | `prompt_id`         | `user_id` referencing `users`                                                                                     |
-| models                   | Represents different AI models available for interaction within conversations.                  | `model_id`          | `created_by` referencing `users`                                                                                  |
-| tools                    | Represents tools that agents can use.                                                           | `tool_id`           | `created_by` referencing `users`                                                                                  |
-| conversations            | Instances of interactions between a user and an agent.                                          | `conversation_id`   | `user_id` referencing `users`, `agent_id` referencing `agents`, `prompt_id` referencing `prompts`                |
-| messages                 | Individual message exchanges within a conversation.                                             | `message_id`        | `conversation_id` referencing `conversations`, `prompt_id` referencing `prompts`                                  |
-| conversation_groups      | Groups of linked conversations that share a common memory and context.                          | `group_id`          | `agent_id` referencing `agents`                                                                                   |
-| conversation_group_memberships | Manages and organizes how conversations are linked together.                               | `membership_id`     | `group_id` referencing `conversation_groups`, `conversation_id` referencing `conversations`                      |
-| files                    | Represents multi-modal context files that can be linked to conversations and agents.            | `file_id`           | `user_id` referencing `users`                                                                                     |
-| file_conversations       | Links files to conversations.                                                                   | `file_conversation_id` | `file_id` referencing `files`, `conversation_id` referencing `conversations`                                     |
-| file_agents              | Links files to agents.                                                                          | `file_agent_id`     | `file_id` referencing `files`, `agent_id` referencing `agents`                                                   |
-| vectors                  | Stores vectorized representations of files for efficient retrieval and use in the RAG system.   | `vector_id`         | `entity_id` referencing `files`                                                                                   |
-| analytics                | Captures events and usage data across the system.                                               | `id`                | `conversation_id` referencing `conversations`, `user_id` referencing `users`, `agent_id` referencing `agents`, `message_id` referencing `messages` |
+| Table Name                                                        | Description                                                                                   | Primary Key         | Foreign Keys                                                                                                       |
+|-------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|---------------------|-------------------------------------------------------------------------------------------------------------------|
+| [users](#users)                                                   | Individuals who use the platform.                                                             | `user_id`           | `plan_id` referencing `price_plans`                                                                               |
+| [user_roles](#user-roles)                                         | Defines different user roles within the platform.                                             | `role_id`           | -                                                                                                                 |
+| [user_permissions](#user-permissions)                             | Defines different user permissions that can be assigned to roles.                             | `permission_id`     | -                                                                                                                 |
+| [user_role_permissions](#user-role-permissions)                   | Links user roles to user permissions.                                                         
+| [agents](#agents)                                                 | Different agents that can be created and managed within the platform.                         | `agent_id`          | `prompt_id` referencing `prompts`, `model_id` referencing `models`, `agent_config_id` referencing `agent_configs`, `created_by` referencing `users` |
+| [agent_configs](#agent-configs)                                   | Custom configuration details for agents.                                                      | `agent_config_id`   | -                                                                                                                 |
+| [agent_subscriptions](#agent-subscriptions)                       | Tracks which users are subscribed to which agents.                                            | `subscription_id`   | `user_id` referencing `users`, `agent_id` referencing `agents`, `invited_by` referencing `users`                 |
+| [prompts](#prompts)                                               | Templates for conversations that should be had with the language model.                       | `prompt_id`         | `user_id` referencing `users`                                                                                     |
+| [models](#models)                                                 | Represents different AI models available for interaction within conversations.                | `model_id`          | `created_by` referencing `users`                                                                                  |
+| [tools](#tools)                                                   | Represents tools that agents can use.                                                         | `tool_id`           | `created_by` referencing `users`                                                                                  |
+| [conversations](#conversations)                                   | Instances of interactions between a user and an agent.                                        | `conversation_id`   | `user_id` referencing `users`, `agent_id` referencing `agents`, `prompt_id` referencing `prompts`                |
+| [messages](#messages)                                             | Individual message exchanges within a conversation.                                           | `message_id`        | `conversation_id` referencing `conversations`, `prompt_id` referencing `prompts`                                  |
+| [conversation_groups](#conversation-groups)                       | Groups of linked conversations that share a common memory and context.                        | `group_id`          | `agent_id` referencing `agents`                                                                                   |
+| [conversation_group_memberships](#conversation-group-memberships) | Manages and organizes how conversations are linked together.                                  | `membership_id`     | `group_id` referencing `conversation_groups`, `conversation_id` referencing `conversations`                      |
+| [files](#files)                                                   | Represents multi-modal context files that can be linked to conversations and agents.          | `file_id`           | `user_id` referencing `users`                                                                                     |
+| [file_conversations](#file-conversations)                         | Links files to conversations.                                                                 | `file_conversation_id` | `file_id` referencing `files`, `conversation_id` referencing `conversations`                                     |
+| [file_agents](#file-agents)                                       | Links files to agents.                                                                        | `file_agent_id`     | `file_id` referencing `files`, `agent_id` referencing `agents`                                                   |
+| [vectors](#vectors)                                               | Stores vectorized representations of files for efficient retrieval and use in the RAG system. | `vector_id`         | `entity_id` referencing `files`                                                                                   |
+| [analytics](#analytics)                                           | Captures events and usage data across the system.                                             | `id`                | `conversation_id` referencing `conversations`, `user_id` referencing `users`, `agent_id` referencing `agents`, `message_id` referencing `messages` |
 
 ### Entity Definitions
 
@@ -75,6 +81,47 @@ The below diagram indicates high-level entity relationships within the database 
 | `plan_id`        | Foreign Key| The price plan associated with the user, references `price_plans`   |
 | `created_at`     | Timestamp  | Timestamp of when the user account was created                      |
 | `updated_at`     | Timestamp  | Timestamp of the last update to the user account                    |
+
+---
+
+#### User Roles
+
+**Definition**: Defines different user roles within the platform.
+
+| Column Name | Type        | Description                              |
+|-------------|-------------|------------------------------------------|
+| `role_id`   | Primary Key | Unique identifier for each role.         |
+| `name`      | String      | The name of the role.                    |
+| `description` | String    | A brief description of the role.         |
+| `created_at` | Timestamp  | Timestamp of when the role was created.  |
+| `updated_at` | Timestamp  | Timestamp of the last update to the role.|
+
+---
+
+#### User Permissions
+
+**Definition**: Defines different user permissions that can be assigned to roles.
+
+| Column Name   | Type        | Description                                  |
+|---------------|-------------|----------------------------------------------|
+| `permission_id` | Primary Key | Unique identifier for each permission.     |
+| `name`        | String      | The name of the permission.                 |
+| `description` | String      | A brief description of the permission.      |
+| `created_at`  | Timestamp   | Timestamp of when the permission was created.|
+| `updated_at`  | Timestamp   | Timestamp of the last update to the permission.|
+
+---
+
+#### User Role Permissions
+
+**Definition**: Links user roles to user permissions.
+
+| Column Name           | Type        | Description                                      |
+|-----------------------|-------------|--------------------------------------------------|
+| `role_permission_id`  | Primary Key | Unique identifier for each role-permission link. |
+| `role_id`             | Foreign Key | The role linked to the permission, references `roles`.   |
+| `permission_id`       | Foreign Key | The permission linked to the role, references `permissions`. |
+| `created_at`          | Timestamp   | Timestamp of when the role-permission link was created. |
 
 ---
 
