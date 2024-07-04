@@ -5,98 +5,33 @@ title: Architecture
 
 ## Overview
 
-The Jutsu "App Hub" architecture is designed to provide a comprehensive and dynamic platform for creating, managing, and interacting with AI agents and their associated contexts. At the heart of this system is a robust user management framework that allows individuals to seamlessly integrate various functionalities and tools to enhance their interaction with AI models.
+The Jutsu "App Hub" architecture is designed to provide a comprehensive and dynamic platform for creating, managing, and interacting with AI agents and their associated contexts. 
 
 
 ## Core Features
 
-### User Management
-
-The architecture allows users to:
-- Create, manage, and interact with multiple threads and agents.
-- Upload and manage multi-modal contexts, including PDFs, images, videos, and audio files.
-- Provide comprehensive and rich data inputs to AI agents, enhancing interaction quality and contextual relevance.
-
-### Threads and Conversations
-
-Users can:
-- Initiate threads, which are chatbot conversations with selected AI models such as GPT-4 or Claude 3.5.
-- Ensure threads retain long-term memory, enabling users to search through and revisit past conversations.
-- Maintain a cohesive and continuous interaction history with AI agents.
-
-### Thread Groups
-
-The system allows:
-- Organizing threads into dynamic thread groups, facilitating better management and contextual grouping of conversations.
-- Drawing context from thread groups for future dialogues, enhancing the relevance and continuity of interactions.
-
-### Multi-Modal Context Management
-
-Users have the ability to:
-- Upload multi-modal context files and link them to threads or thread groups.
-- Dynamically add or remove files from threads/thread groups, effectively organizing and sharing context.
-- Ensure that AI agents have access to a wide range of contextual information, improving their response accuracy and relevance.
-
-### Agent Threads
-
-The platform supports:
-- Publishing agent threads as simple prompt-engineered agents.
-- Sharing agent threads via a unique URL, allowing other users to access and interact with the same context and knowledge base.
-- Assigning various access permissions to published agent threads, such as public access or invite-only access.
-
-### Prompt Template Registry
-
-Users can:
-- Search through a registry of pre-built prompt engineering templates.
-- Load templates into new threads, providing a starting point for creating new agent threads.
-- Publish their own agent threads into the prompt template registry for others to use, fostering collaboration and knowledge sharing.
-
-### Subscriptions and Access Control
-
-The system manages:
-- User subscriptions to published agent threads, tracking which users have access to which agents.
-- Access permissions, ensuring that only authorized users can interact with certain agent threads.
-- Subscription management, allowing users to subscribe or unsubscribe from agent threads as needed.
-
-### Tools Integration
-
-Agents in the system can:
-- Use various tools to perform specific tasks or access external services.
-- Be linked to tools, which are managed and integrated within the agent threads.
-- Enhance their functionality and extend their capabilities through tool integration.
-
-### Retrieval-Augmented Generation (RAG)
-
-The architecture includes:
-- A sophisticated RAG system for efficient data retrieval and augmentation.
-- A vector database that stores vectorized representations of documents, conversations, and other data.
-- Enhanced data management and retrieval capabilities, ensuring that AI agents can access and use relevant information effectively.
-
-### Applications and Agent Types
-
-The system supports:
-- Different application contexts, allowing for versatile use cases and interactions.
-- Various agent types, enabling users to create and manage different kinds of agents such as chatbot agents, data retrieval agents, and more.
-- A flexible and extensible framework that can adapt to evolving user needs and technological advancements.
-
+_Coming soon..._
 
 ## Database Schema
 
 ### Entity Overview
 
 - **users**: Central to the system, mapping all user interactions.
-- **applications**: Represents different application contexts within the agent platform.
-- **agent_types**: Defines different types of agents that can be loaded within applications.
-- **threads**: Represents individual conversations with a model, linked to users, models, applications, and agent types.
-- **conversations**: Represents individual message exchanges within a thread, linked to threads.
-- **thread_groups**: Allows users to organize threads, linked to users and threads.
-- **files**: Manages multi-modal content, linked to users, threads, and thread groups.
-- **agent_threads**: Published threads with prompt engineering, linked to threads and users, with access control.
-- **prompt_templates**: Stores reusable prompt engineering templates, linked to users and threads.
-- **models**: Stores model details, linked to threads.
-- **agent_subscriptions**: Manages user subscriptions to published agent threads.
-- **tools**: Represents tools that agents can use, linked to agent threads.
-- **vectors**: Manages vectorized data for efficient retrieval in the RAG system, linked to various entities.
+- **agents**: Different agents that can be created and managed within the platform.
+- **agent_configs**: Custom configuration details for agents, including frontend UX and other arbitrary key/value pairs.
+- **agent_subscriptions**: Manages user subscriptions to agents, tracking which users have access to which agents.
+- **prompts**: Stores reusable prompt engineering templates, linked to users and agents.
+- **models**: Stores model details, linked to agents.
+- **tools**: Represents tools that agents can use, linked to agents.
+- **conversations**: Represents individual interactions between a user and an agent, linked to users and agents.
+- **messages**: Represents individual message exchanges within a conversation.
+- **conversation_groups**: Groups of linked conversations that share a common memory and context, linked to agents.
+- **conversation_group_memberships**: Manages and organizes how conversations are linked together within conversation groups.
+- **files**: Manages multi-modal content, linked to users, conversations, and agents.
+- **file_conversations**: Links files to conversations, enabling files to be part of multiple conversation contexts.
+- **file_agents**: Links files to agents, enabling files to be part of an agent's default knowledge base.
+- **vectors**: Stores vectorized representations of files for efficient retrieval and use in the RAG (Retrieval-Augmented Generation) system.
+- **analytics**: Captures events and usage data across the system to monitor interactions and performance.
 
 ### Entity Diagram
 
@@ -106,205 +41,224 @@ The below diagram indicates high-level entity relationships within the database 
 
 ### Entity Table
 
+### Entity Table
+
 | Table Name               | Description                                                                                     | Primary Key         | Foreign Keys                                                                                                       |
 |--------------------------|-------------------------------------------------------------------------------------------------|---------------------|-------------------------------------------------------------------------------------------------------------------|
-| users                    | Individuals who use the App Hub platform.                                                       | `user_id`           | -                                                                                                                 |
-| applications             | Different contexts where various types of agents can be loaded and used.                        | `application_id`    | -                                                                                                                 |
-| agent_types              | Different kinds of agents supported by the platform.                                            | `agent_type_id`     | -                                                                                                                 |
-| threads                  | Containers for entire interaction sessions or topics between a user and an agent.               | `thread_id`         | `user_id`, `model_id`, `application_id`, `agent_type_id`                                                          |
-| conversations            | Individual message exchanges within a thread.                                                   | `conversation_id`   | `thread_id`                                                                                                       |
-| thread_groups            | Collections of threads organized by the user.                                                   | `group_id`          | `user_id`                                                                                                         |
-| thread_group_memberships | Links threads to thread groups.                                                                 | -                   | `group_id`, `thread_id`                                                                                           |
-| files                    | Files such as PDFs, images, videos, and audio.                                                  | `file_id`           | `user_id`                                                                                                         |
-| file_thread_mappings     | Links files to threads.                                                                         | -                   | `file_id`, `thread_id`                                                                                            |
-| file_group_mappings      | Links files to thread groups.                                                                   | -                   | `file_id`, `group_id`                                                                                            |
-| agent_threads            | Published threads with prompt engineering.                                                      | `agent_id`          | `thread_id`, `user_id`                                                                                            |
-| agent_invites            | Manages invitations to access agent threads.                                                    | `invite_id`         | `agent_id`, `invited_user_id`                                                                                     |
-| prompt_templates         | Stores reusable prompt engineering templates.                                                   | `template_id`       | `user_id`                                                                                                         |
-| prompt_template_usages   | Links prompt templates to threads where they are used.                                          | `usage_id`          | `template_id`, `thread_id`                                                                                        |
-| models                   | Represents different AI models available for interaction within threads.                        | `model_id`          | -                                                                                                                 |
-| agent_subscriptions      | Manages subscriptions of users to published agent threads.                                      | `subscription_id`   | `user_id`, `agent_id`                                                                                            |
-| tools                    | Represents tools that agents can use.                                                           | `tool_id`           | -                                                                                                                 |
-| agent_tools              | Links tools to agent threads.                                                                   | -                   | `agent_id`, `tool_id`                                                                                             |
-| vectors                  | Stores vectorized representations of data for efficient retrieval in the RAG system.            | `vector_id`         | `entity_id` (ID of associated entity), `entity_type` (Type of the entity, e.g., file, conversation)               |
+| users                    | Individuals who use the platform.                                                               | `user_id`           | `plan_id` referencing `price_plans`                                                                               |
+| agents                   | Different agents that can be created and managed within the platform.                           | `agent_id`          | `prompt_id` referencing `prompts`, `model_id` referencing `models`, `tool_ids` referencing `tools`, `vectors_id` referencing `vectors`, `agent_config_id` referencing `agent_configs`, `created_by` referencing `users` |
+| agent_configs            | Custom configuration details for agents.                                                        | `agent_config_id`   | -                                                                                                                 |
+| agent_subscriptions      | Tracks which users are subscribed to which agents.                                               | `subscription_id`   | `user_id` referencing `users`, `agent_id` referencing `agents`, `invited_by` referencing `users`                 |
+| prompts                  | Templates for conversations that should be had with the language model.                         | `prompt_id`         | `user_id` referencing `users`                                                                                     |
+| models                   | Represents different AI models available for interaction within conversations.                  | `model_id`          | `created_by` referencing `users`                                                                                  |
+| tools                    | Represents tools that agents can use.                                                           | `tool_id`           | `created_by` referencing `users`                                                                                  |
+| conversations            | Instances of interactions between a user and an agent.                                          | `conversation_id`   | `user_id` referencing `users`, `agent_id` referencing `agents`, `prompt_id` referencing `prompts`                |
+| messages                 | Individual message exchanges within a conversation.                                             | `message_id`        | `conversation_id` referencing `conversations`, `prompt_id` referencing `prompts`                                  |
+| conversation_groups      | Groups of linked conversations that share a common memory and context.                          | `group_id`          | `agent_id` referencing `agents`                                                                                   |
+| conversation_group_memberships | Manages and organizes how conversations are linked together.                               | `membership_id`     | `group_id` referencing `conversation_groups`, `conversation_id` referencing `conversations`                      |
+| files                    | Represents multi-modal context files that can be linked to conversations and agents.            | `file_id`           | `user_id` referencing `users`                                                                                     |
+| file_conversations       | Links files to conversations.                                                                   | `file_conversation_id` | `file_id` referencing `files`, `conversation_id` referencing `conversations`                                     |
+| file_agents              | Links files to agents.                                                                          | `file_agent_id`     | `file_id` referencing `files`, `agent_id` referencing `agents`                                                   |
+| vectors                  | Stores vectorized representations of files for efficient retrieval and use in the RAG system.   | `vector_id`         | `entity_id` referencing `files`                                                                                   |
+| analytics                | Captures events and usage data across the system.                                               | `id`                | `conversation_id` referencing `conversations`, `user_id` referencing `users`, `agent_id` referencing `agents`, `message_id` referencing `messages` |
 
 ### Entity Attributes
 
 #### Users
-**Definition**: Individuals who use the App Hub platform, capable of creating, managing, and interacting with various threads and agents.
+**Definition**: Individuals who use the platform, capable of creating, managing, and interacting with various agents.
 
 - **users**
-  - `user_id` (Primary Key)
-  - `username`
-  - `email`
-  - `password_hash`
-  - `created_at`
-  - `updated_at`
+  - `user_id` (Primary Key): Unique identifier for each user.
+  - `username`: The user's chosen display name.
+  - `email`: The user's email address.
+  - `password_hash`: Hashed representation of the user's password.
+  - `plan_id` (Foreign Key referencing price_plans): The price plan associated with the user.
+  - `created_at`: Timestamp of when the user account was created.
+  - `updated_at`: Timestamp of the last update to the user account.
 
-#### Applications
-**Definition**: Different contexts within the App Hub where various types of agents can be loaded and used.
+#### Agents
+**Definition**: Different agents that can be created and managed within the platform.
 
-- **applications**
-  - `application_id` (Primary Key)
-  - `name`
-  - `description`
-  - `created_at`
-  - `updated_at`
+- **agents**
+  - `agent_id` (Primary Key): Unique identifier for each agent.
+  - `name`: The name of the agent.
+  - `description`: A brief description of what the agent does.
+  - `type`: The type or category of the agent (e.g., chatbot, data retrieval).
+  - `prompt_id` (Foreign Key referencing prompts): The prompt template associated with the agent.
+  - `model_id` (Foreign Key referencing models): The AI model used by the agent.
+  - `tool_ids` (Foreign Key referencing tools): The tools that the agent can use.
+  - `vectors_id` (Foreign Key referencing vectors): References to the default vector set associated with the agent.
+  - `agent_config_id` (Foreign Key referencing agent_configs): References the configuration settings for the agent.
+  - `is_public`: Boolean indicating whether the agent is public or private.
+  - `created_by` (Foreign Key referencing users): The user who created the agent.
+  - `created_at`: Timestamp of when the agent was created.
+  - `updated_at`: Timestamp of the last update to the agent.
 
-#### Agent Types
-**Definition**: Different kinds of agents supported by the platform, such as chatbot agents, data retrieval agents, etc.
+#### Agent Configs
 
-- **agent_types**
-  - `agent_type_id` (Primary Key)
-  - `name`
-  - `description`
-  - `created_at`
-  - `updated_at`
+**Definition**: Custom configuration details for agents, including frontend UX and other arbitrary key/value pairs.
 
-#### Threads
-**Definition**: Containers for entire interaction sessions or topics between a user and an agent, maintaining the context of the conversation.
-
-- **threads**
-  - `thread_id` (Primary Key)
-  - `user_id` (Foreign Key referencing users)
-  - `model_id` (Foreign Key referencing models)
-  - `title`
-  - `created_at`
-  - `updated_at`
-  - `application_id` (Foreign Key referencing applications)
-  - `agent_type_id` (Foreign Key referencing agent_types)
-
-#### Conversations
-**Definition**: Individual message exchanges within a thread, representing the dialogue between a user and an agent.
-
-- **conversations**
-  - `conversation_id` (Primary Key)
-  - `thread_id` (Foreign Key referencing threads)
-  - `message`
-  - `timestamp`
-  - `role` (user, assistant)
-
-#### Thread Groups
-**Definition**: Collections of threads organized by the user, allowing for better management and contextual grouping of conversations.
-
-- **thread_groups**
-  - `group_id` (Primary Key)
-  - `user_id` (Foreign Key referencing users)
-  - `name`
-  - `description`
-  - `created_at`
-  - `updated_at`
-
-- **thread_group_memberships**
-  - `group_id` (Foreign Key referencing thread_groups)
-  - `thread_id` (Foreign Key referencing threads)
-  - `added_at`
-
-#### Multi-Modal Contexts
-**Definition**: Files such as PDFs, images, videos, and audio that users can upload and link to threads or thread groups, providing additional context for conversations.
-
-- **files**
-  - `file_id` (Primary Key)
-  - `user_id` (Foreign Key referencing users)
-  - `file_name`
-  - `file_type`
-  - `file_url`
-  - `uploaded_at`
-
-- **file_thread_mappings**
-  - `file_id` (Foreign Key referencing files)
-  - `thread_id` (Foreign Key referencing threads)
-  - `added_at`
-
-- **file_group_mappings**
-  - `file_id` (Foreign Key referencing files)
-  - `group_id` (Foreign Key referencing thread_groups)
-  - `added_at`
-
-#### Agent Threads
-**Definition**: Published threads with prompt engineering that can be shared and accessed by other users, allowing for collaborative use and extension of conversation contexts.
-
-- **agent_threads**
-  - `agent_id` (Primary Key)
-  - `thread_id` (Foreign Key referencing threads)
-  - `user_id` (Foreign Key referencing users)
-  - `is_published`
-  - `access_type` (public, invite-only)
-  - `created_at`
-  - `updated_at`
-  - `unique_url` (Unique URL generated from agent_id, thread_id, and user_id)
-
-- **agent_invites**
-  - `invite_id` (Primary Key)
-  - `agent_id` (Foreign Key referencing agent_threads)
-  - `invited_user_id` (Foreign Key referencing users)
-  - `invited_at`
-
-#### Prompt Template Registry
-**Definition**: Stores reusable prompt engineering templates that users can search and load into new thread instances, providing a starting point for creating new agents.
-
-- **prompt_templates**
-  - `template_id` (Primary Key)
-  - `user_id` (Foreign Key referencing users)
-  - `title`
-  - `description`
-  - `prompt`
-  - `created_at`
-  - `updated_at`
-
-- **prompt_template_usages**
-  - `usage_id` (Primary Key)
-  - `template_id` (Foreign Key referencing prompt_templates)
-  - `thread_id` (Foreign Key referencing threads)
-  - `used_at`
-
-#### Models
-**Definition**: Represents different AI models available for interaction within threads, such as GPT-4, Claude 3.5, etc.
-
-- **models**
-  - `model_id` (Primary Key)
-  - `name`
-  - `version`
-  - `description`
-  - `created_at`
-  - `updated_at`
+- **agent_configs**
+  - `agent_config_id` (Primary Key): Unique identifier for each agent configuration.
+  - `frontend_ux`: JSON or text representing the frontend user experience configuration.
+  - `meta_data`: JSON or text for storing arbitrary key/value pairs for additional configurations.
+  - `created_at`: Timestamp of when the agent configuration was created.
+  - `updated_at`: Timestamp of the last update to the agent configuration.
 
 #### Agent Subscriptions
-**Definition**: Manages subscriptions of users to published agent threads, tracking which users have access to which agents.
+**Definition**: Tracks which users are subscribed to which agents, managing access permissions and invitations.
 
 - **agent_subscriptions**
-  - `subscription_id` (Primary Key)
-  - `user_id` (Foreign Key referencing users)
-  - `agent_id` (Foreign Key referencing agent_threads)
-  - `subscribed_at`
+  - `subscription_id` (Primary Key): Unique identifier for each subscription.
+  - `user_id` (Foreign Key referencing users): The user who is subscribed to the agent.
+  - `agent_id` (Foreign Key referencing agents): The agent to which the user is subscribed.
+  - `invited_by` (Foreign Key referencing users): The user who invited the subscriber, if applicable.
+  - `is_invited`: Boolean indicating if the subscription is by invitation.
+  - `created_at`: Timestamp of when the subscription was created.
+  - `updated_at`: Timestamp of the last update to the subscription.
+
+#### Prompts
+**Definition**: Templates for conversations that should be had with the language model, providing a starting point for interactions.
+
+- **prompts**
+  - `prompt_id` (Primary Key): Unique identifier for each prompt.
+  - `user_id` (Foreign Key referencing users): The user who created the prompt.
+  - `title`: The title of the prompt.
+  - `description`: A brief description of the prompt.
+  - `prompt`: The actual text of the prompt template.
+  - `created_at`: Timestamp of when the prompt was created.
+  - `updated_at`: Timestamp of the last update to the prompt.
+
+#### Models
+**Definition**: Represents different AI models available for interaction within conversations, such as GPT-4, Claude 3.5, etc.
+
+- **models**
+  - `model_id` (Primary Key): Unique identifier for each model.
+  - `name`: The name of the model.
+  - `provider`: The provider of the model.
+  - `api_key`: The API key used to access the model.
+  - `version`: The version of the model.
+  - `description`: A brief description of the model.
+  - `is_public`: Boolean indicating whether the model is public or private.
+  - `created_by` (Foreign Key referencing users): The user who created the model.
+  - `created_at`: Timestamp of when the model was created.
+  - `updated_at`: Timestamp of the last update to the model.
 
 #### Tools
 **Definition**: Represents tools that agents can use, enabling them to perform specific tasks or access external services.
 
 - **tools**
-  - `tool_id` (Primary Key)
-  - `name`
-  - `description`
-  - `created_at`
-  - `updated_at`
+  - `tool_id` (Primary Key): Unique identifier for each tool.
+  - `name`: The name of the tool.
+  - `description`: A brief description of what the tool does.
+  - `type` (internal/external): The type of tool (e.g., internal, external).
+  - `source` (url): The source URL of the tool.
+  - `schema`: The schema of the tool.
+  - `is_public`: Boolean indicating whether the tool is public or private.
+  - `created_by` (Foreign Key referencing users): The user who created the tool.
+  - `created_at`: Timestamp of when the tool was created.
+  - `updated_at`: Timestamp of the last update to the tool.
 
-- **agent_tools**
-  - `agent_id` (Foreign Key referencing agent_threads)
-  - `tool_id` (Foreign Key referencing tools)
-  - `added_at`
+#### Conversations
+**Definition**: Instances of interactions between a user and an agent, maintaining the context of the conversation.
+
+- **conversations**
+  - `conversation_id` (Primary Key): Unique identifier for each conversation.
+  - `user_id` (Foreign Key referencing users): The user participating in the conversation.
+  - `agent_id` (Foreign Key referencing agents): The agent involved in the conversation.
+  - `prompt_id` (Foreign Key referencing prompts): The prompt template used in the conversation.
+  - `title`: The title of the conversation.
+  - `created_at`: Timestamp of when the conversation was created.
+  - `updated_at`: Timestamp of the last update to the conversation.
+
+#### Messages
+**Definition**: Individual message exchanges within a conversation, representing the dialogue between a user and an agent.
+
+- **messages**
+  - `message_id` (Primary Key): Unique identifier for each message.
+  - `conversation_id` (Foreign Key referencing conversations): The conversation this message belongs to.
+  - `prompt_id` (Foreign Key referencing prompts): The prompt this message is part of.
+  - `content`: The content of the message.
+  - `timestamp`: The time when the message was sent.
+  - `role` (user, assistant): The role of the message sender (e.g., user or assistant).
+
+#### Conversation Groups
+**Definition**: Groups of linked conversations that share a common memory and context, allowing the agent to access and use the collective history of multiple conversations.
+
+- **conversation_groups**
+  - `group_id` (Primary Key): Unique identifier for each conversation group.
+  - `agent_id` (Foreign Key referencing agents): The agent managing the conversation group.
+  - `name`: The name of the conversation group.
+  - `description`: A brief description of the conversation group.
+  - `created_at`: Timestamp of when the conversation group was created.
+  - `updated_at`: Timestamp of the last update to the conversation group.
+
+#### Conversation Group Memberships
+**Definition**: Manages and organizes how conversations are linked together.
+
+- **conversation_group_memberships**
+  - `group_id` (Foreign Key referencing conversation_groups): The conversation group this membership belongs to.
+  - `conversation_id` (Foreign Key referencing conversations): The conversation linked to the group.
+  - `added_at`: Timestamp of when the conversation was added to the group.
+
+#### Files
+**Definition**: Represents multi-modal context files that can be linked to conversations and agents, owned by specific users.
+
+- **files**
+  - `file_id` (Primary Key): Unique identifier for each file.
+  - `user_id` (Foreign Key referencing users): The owner of the file.
+  - `file_name`: The name of the file.
+  - `file_type`: The type of the file (e.g., PDF, image, video, audio).
+  - `file_url`: The URL where the file is stored.
+  - `uploaded_at`: Timestamp of when the file was uploaded.
+  - `updated_at`: Timestamp of the last update to the file.
+
+#### File Conversations
+**Definition**: Links files to conversations, enabling files to be part of multiple conversation contexts.
+
+- **file_conversations**
+  - `file_conversation_id` (Primary Key): Unique identifier for each file-conversation link.
+  - `file_id` (Foreign Key referencing files): The file being linked.
+  - `conversation_id` (Foreign Key referencing conversations): The conversation the file is linked to.
+  - `linked_at`: Timestamp of when the file was linked to the conversation.
+
+#### File Agents
+**Definition**: Links files to agents, enabling files to be part of an agent's default knowledge base.
+
+- **file_agents**
+  - `file_agent_id` (Primary Key): Unique identifier for each file-agent link.
+  - `file_id` (Foreign Key referencing files): The file being linked.
+  - `agent_id` (Foreign Key referencing agents): The agent the file is linked to.
+  - `linked_at`: Timestamp of when the file was linked to the agent.
 
 #### Vectors
-**Definition**: Stores vectorized representations of documents, conversations, and other data to enable efficient retrieval and augmentation.
+**Definition**: Stores vectorized representations of files for efficient retrieval and use in the RAG (Retrieval-Augmented Generation) system.
 
 - **vectors**
-  - `vector_id` (Primary Key)
-  - `entity_id` (ID of the associated entity, e.g., file_id, conversation_id)
-  - `entity_type` (Type of the entity, e.g., file, conversation)
-  - `vector` (Vector representation of the data)
-  - `source` (Source of the data, e.g., user-uploaded, generated by agent)
-  - `embedding_model` (Model used to generate the vector, e.g., GPT-4, BERT)
-  - `embedding_version` (Version of the embedding model)
-  - `embedding_type` (Type of embedding, e.g., text, image, audio)
-  - `created_at`
-  - `updated_at`
-  - `version` (Version of the vector representation)
+  - `vector_id` (Primary Key): Unique identifier for each vector.
+  - `entity_id` (Foreign Key referencing files): The ID of the associated file.
+  - `entity_type` (Constant Value 'file'): The type of the entity, which in this case is always 'file'.
+  - `vector`: The vector representation of the file's content.
+  - `source`: The source of the data (e.g., user-uploaded, generated by agent).
+  - `embedding_model`: The model used to generate the vector (e.g., GPT-4, BERT).
+  - `embedding_version`: The version of the embedding model.
+  - `embedding_type`: The type of embedding (e.g., text, image, audio).
+  - `created_at`: Timestamp of when the vector was created.
+  - `updated_at`: Timestamp of the last update to the vector.
+  - `version`: The version of the vector representation.
+
+#### Analytics
+**Definition**: Captures events and usage data across the system to monitor interactions and performance.
+
+- **analytics**
+  - `id` (Primary Key): Unique identifier for each analytics record.
+  - `conversation_id` (Foreign Key referencing conversations): The conversation this record is associated with.
+  - `user_id` (Foreign Key referencing users): The user involved in the conversation.
+  - `agent_id` (Foreign Key referencing agents): The agent involved in the conversation.
+  - `message_id` (Foreign Key referencing messages): The specific message being analyzed.
+  - `role` (user, assistant): The role of the message sender.
+  - `content`: The content of the message.
+  - `input_token`: The number of input tokens used.
+  - `output_token`: The number of output tokens generated.
+  - `cost`: The cost associated with processing the message.
+  - `created_at`: Timestamp of when the analytics record was created.
