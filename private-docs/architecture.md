@@ -9,6 +9,8 @@ The Jutsu architecture is designed to provide a comprehensive and dynamic platfo
 
 ## Core Components
 
+![Components Diagram](../static/img/docs/architecture_components_diagram.png)
+
 ### Orchestration API
 
 The Orchestration API serves as the central interface and business logic layer for interacting with and managing the database. It coordinates operations across different components of the system and consists of several subsystems:
@@ -68,13 +70,13 @@ The Integrations API serves as the interface and registry for tools, enabling ag
 - Handles the execution of tool operations and returns results to agents.
 - Supports integration with external services and APIs.
 
-## Database Schema Overview
+## Database Overview
 
 ### Entity Diagram
 
 The below diagram indicates high-level entity relationships within the database schema.
 
-![Entity Diagram](../static/img/docs/architecture_database_flowchart.png)
+![Entity Diagram](../static/img/docs/architecture_schema_diagram.png)
 
 ### Entity Reference
 
@@ -100,7 +102,7 @@ The below diagram indicates high-level entity relationships within the database 
 | [vectors](#vectors)                                               | Stores vectorized representations of files for efficient retrieval and use in the RAG system. | `vector_id`         | `entity_id` referencing `files`                                                                                   |
 | [analytics](#analytics)                                           | Captures events and usage data across the system.                                             | `id`                | `conversation_id` referencing `conversations`, `user_id` referencing `users`, `agent_id` referencing `agents`, `message_id` referencing `messages` |
 
-## Database Entity Definitions
+## Database Entities
 
 ### Users
 
