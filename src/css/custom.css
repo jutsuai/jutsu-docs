@@ -28,3 +28,28 @@
   --ifm-color-primary-lightest: #4dbfff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.markdown > table {
+  width: 100%;
+}
+
+.markdown table th,
+.markdown table td {
+  padding: 8px 16px;
+  text-align: left;
+}
+
+.markdown table th,
+.markdown table td {
+  width: auto;
+}
+
+.markdown table th:last-child,
+.markdown table td:last-child {
+  width: 100%;
+}
