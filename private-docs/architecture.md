@@ -54,7 +54,7 @@ Handles the storage and management of multi-modal content linked to conversation
 
 - Manages file upload, storage, and retrieval.
 - Links files to conversations and agents.
-- Integrates with the RAG Pipeline for vectorizing file content.
+- Integrates with the RAG Pipeline for ingestion of file content.
 
 ### RAG Pipeline & API
 
