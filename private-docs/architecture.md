@@ -7,7 +7,11 @@ title: Architecture
 
 The Jutsu architecture is designed to provide a comprehensive and dynamic platform for creating, managing, and interacting with AI agents and their associated contexts.
 
-## Core Components
+## Components
+
+### Diagram
+
+The below diagram indicates high-level component relationships of the architecture's components.
 
 ![Components Diagram](../static/img/docs/architecture_components_diagram.png)
 
@@ -72,13 +76,13 @@ The Integrations API serves as the interface and registry for tools, enabling ag
 
 ## Database Overview
 
-### Entity Diagram
+### Diagram
 
 The below diagram indicates high-level entity relationships within the database schema.
 
 ![Entity Diagram](../static/img/docs/architecture_schema_diagram.png)
 
-### Entity Reference
+### Reference
 
 | Table Name                                                        | Description                                                                                   | Primary Key         | Foreign Keys                                                                                                       |
 |-------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|---------------------|-------------------------------------------------------------------------------------------------------------------|
