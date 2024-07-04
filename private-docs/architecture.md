@@ -12,7 +12,7 @@ The Jutsu "App Hub" architecture is designed to provide a comprehensive and dyna
 
 _Coming soon..._
 
-## Database Schema
+## Database Schema Overview
 
 ### Entity Diagram
 
@@ -66,9 +66,9 @@ The below diagram indicates high-level entity relationships within the database 
 | [vectors](#vectors)                                               | Stores vectorized representations of files for efficient retrieval and use in the RAG system. | `vector_id`         | `entity_id` referencing `files`                                                                                   |
 | [analytics](#analytics)                                           | Captures events and usage data across the system.                                             | `id`                | `conversation_id` referencing `conversations`, `user_id` referencing `users`, `agent_id` referencing `agents`, `message_id` referencing `messages` |
 
-### Entity Definitions
+### Database Schema Definitions
 
-#### Users
+### Users
 
 **Definition**: Individuals who use the platform, capable of creating, managing, and interacting with various agents.
 
@@ -84,7 +84,7 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
-#### User Roles
+### User Roles
 
 **Definition**: Defines different user roles within the platform.
 
@@ -98,7 +98,7 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
-#### User Permissions
+### User Permissions
 
 **Definition**: Defines different user permissions that can be assigned to roles.
 
@@ -112,7 +112,7 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
-#### User Role Permissions
+### User Role Permissions
 
 **Definition**: Links user roles to user permissions.
 
@@ -125,7 +125,7 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
-#### Agents
+### Agents
 
 **Definition**: Different agents that can be created and managed within the platform.
 
@@ -147,7 +147,7 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
-#### Agent Configs
+### Agent Configs
 
 **Definition**: Custom configuration details for agents, including frontend UX and other arbitrary key/value pairs.
 
@@ -161,7 +161,7 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
-#### Agent Subscriptions
+### Agent Subscriptions
 
 **Definition**: Tracks which users are subscribed to which agents, managing access permissions and invitations.
 
@@ -177,7 +177,7 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
-#### Prompts
+### Prompts
 
 **Definition**: Templates for conversations that should be had with the language model, providing a starting point for interactions.
 
@@ -193,7 +193,7 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
-#### Models
+### Models
 
 **Definition**: Represents different AI models available for interaction within conversations, such as GPT-4, Claude 3.5, etc.
 
@@ -212,7 +212,7 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
-#### Tools
+### Tools
 
 **Definition**: Represents tools that agents can use, enabling them to perform specific tasks or access external services.
 
@@ -232,7 +232,7 @@ The below diagram indicates high-level entity relationships within the database 
 ---
 
 
-#### Conversations
+### Conversations
 
 **Definition**: Instances of interactions between a user and an agent, maintaining the context of the conversation.
 
@@ -248,7 +248,7 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
-#### Messages
+### Messages
 
 **Definition**: Individual message exchanges within a conversation, representing the dialogue between a user and an agent.
 
@@ -263,7 +263,7 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
-#### Conversation Groups
+### Conversation Groups
 
 **Definition**: Groups of linked conversations that share a common memory and context, allowing the agent to access and use the collective history of multiple conversations.
 
@@ -278,7 +278,7 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
-#### Conversation Group Memberships
+### Conversation Group Memberships
 
 **Definition**: Manages and organizes how conversations are linked together within conversation groups.
 
@@ -290,7 +290,7 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
-#### Files
+### Files
 
 **Definition**: Represents multi-modal context files that can be linked to conversations and agents, owned by specific users.
 
@@ -306,7 +306,7 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
-#### File Conversations
+### File Conversations
 
 **Definition**: Links files to conversations, enabling files to be part of multiple conversation contexts.
 
@@ -319,7 +319,7 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
-#### File Agents
+### File Agents
 
 **Definition**: Links files to agents, enabling files to be part of an agent's default knowledge base.
 
@@ -332,7 +332,7 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
-#### Vectors
+### Vectors
 
 **Definition**: Stores vectorized representations of files for efficient retrieval and use in the RAG (Retrieval-Augmented Generation) system.
 
@@ -352,7 +352,7 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
-#### Analytics
+### Analytics
 
 **Definition**: Captures events and usage data across the system to monitor interactions and performance.
 
