@@ -5,7 +5,7 @@ title: Architecture
 
 ## Overview
 
-The Jutsu architecture is designed to provide a comprehensive and dynamic platform for creating, managing, and interacting with AI agents and their associated contexts.
+The Jutsu architecture is designed to provide a comprehensive and dynamic platform for creating, managing, and interacting with AI agents.
 
 ## Components
 
