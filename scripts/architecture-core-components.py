@@ -69,6 +69,6 @@ nx.draw_networkx_edges(G, pos, edgelist=G.edges(), arrowstyle='-|>', arrowsize=2
 ax.axis('off')
 
 # Save the figure
-plt.savefig('./static/img/docs/architecture_components_diagram.png', bbox_inches='tight', facecolor=fig.get_facecolor())
+plt.savefig('./static/img/docs/architecture_core_components_diagram.png', bbox_inches='tight', facecolor=fig.get_facecolor())
 
 plt.show()

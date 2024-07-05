@@ -7,13 +7,13 @@ title: Architecture
 
 The Jutsu architecture is designed to provide a comprehensive and dynamic platform for creating, managing, and interacting with AI agents.
 
-## Components
+## Core Components
 
 ### Diagram
 
-The below diagram indicates high-level component relationships of the architecture's components.
+The below diagram indicates high-level core component relationships of the architecture's components.
 
-![Components Diagram](../static/img/docs/architecture_components_diagram.png)
+![Core Components Diagram](../static/img/docs/architecture_core_components_diagram.png)
 
 ### Orchestration API
 
