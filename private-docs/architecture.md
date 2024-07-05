@@ -15,18 +15,14 @@ The below diagram indicates high-level core component relationships of the archi
 
 ![Core Components Diagram](../static/img/docs/architecture_core_components_diagram.png)
 
-### Orchestration API
-
-The Orchestration API serves as the central interface and business logic layer for interacting with and managing the database. It coordinates operations across different components of the system and consists of several subsystems:
-
-#### User Management Subsystem
+### User Management
 Handles all operations related to user accounts, roles, and permissions.
 
 - Manages CRUD operations for users.
 - Ensures proper authentication and authorization.
 - Manages user roles and permissions.
 
-#### Agent Management Subsystem
+### Agent Management
 Provides comprehensive functionality for creating, configuring, and managing AI agents.
 
 - Supports the definition of prompts.
@@ -34,7 +30,7 @@ Provides comprehensive functionality for creating, configuring, and managing AI 
 - Updates agent configurations.
 - Manages agent subscriptions and permissions.
 
-#### Conversation Management Subsystem
+### Conversation Management
 Handles the management of interactions between users and agents.
 
 - Maintains conversation context.
@@ -42,37 +38,37 @@ Handles the management of interactions between users and agents.
 - Supports conversation grouping.
 - Manages conversation workflows.
 
-#### Analytics Subsystem
-Captures events and usage data across the platform to monitor interactions and performance.
-
-- Collects and stores analytics data.
-- Provides reporting and insights.
-- Supports monitoring and alerting based on defined metrics.
-
-#### File Management Subsystem
+### File Management
 Handles the storage and management of multi-modal content linked to conversations and agents.
 
 - Manages file upload, storage, and retrieval.
 - Links files to conversations and agents.
 - Integrates with the RAG Pipeline for ingestion of file content.
 
-### RAG Pipeline & API
+### RAG Pipeline
 
-The Retrieval-Augmented Generation (RAG) Pipeline and API handle all operations related to retrieval-augmented generation. This component integrates with vector databases and processes vectorized data to enhance the generation of AI responses.
+The Retrieval-Augmented Generation (RAG) Pipeline handles all operations related to retrieval-augmented generation. This component integrates with vector databases and processes vectorized data to enhance the generation of AI responses.
 
 - Manages the vectorized representations of data (files, conversations, etc.).
 - Performs efficient retrieval operations to augment AI response generation.
 - Integrates with embedding models to generate and update vector representations.
 - Provides APIs for querying and managing vectors.
 
-### Integrations API
+### Integrations
 
-The Integrations API serves as the interface and registry for tools, enabling agents to perform specific tasks or access external services.
+Serves as the interface and registry for tools, enabling agents to perform specific tasks or access external services.
 
 - Manages the registry of available tools.
 - Provides interfaces for agents to invoke and interact with tools.
 - Handles the execution of tool operations and returns results to agents.
 - Supports integration with external services and APIs.
+
+### Analytics
+Captures events and usage data across the platform to monitor interactions and performance.
+
+- Collects and stores analytics data.
+- Provides reporting and insights.
+- Supports monitoring and alerting based on defined metrics.
 
 ## Database Overview
 
@@ -411,3 +407,137 @@ The below diagram indicates high-level entity relationships within the database 
 | `created_at`      | Timestamp    | Timestamp of when the analytics record was created                       |
 
 ---
+
+## Routes and Resources
+
+This section details all the endpoints for the core components of the Jutsu platform.
+
+### User Management
+
+Handles all operations related to user accounts, roles, permissions, and authentication, essential for managing users within the Agent Operating System.
+
+| **Endpoint**                | **Method** | **Description**                     |
+|-----------------------------|------------|-------------------------------------|
+| `/users`                    | POST       | Create User (Register Account)      |
+| `/users/{user_id}`          | GET        | Get User Details                    |
+| `/users/{user_id}`          | PUT        | Update User                         |
+| `/users/{user_id}`          | DELETE     | Delete User                         |
+| `/auth/login`               | POST       | User Login                          |
+| `/auth/logout`              | POST       | User Logout                         |
+| `/auth/refresh`             | POST       | Refresh Authentication Token        |
+| `/auth/password-reset`      | POST       | Request Password Reset              |
+| `/auth/password-reset/{token}` | POST    | Reset Password                      |
+| `/roles`                    | POST       | Create Role                         |
+| `/roles/{role_id}`          | GET        | Get Role Details                    |
+| `/roles/{role_id}`          | PUT        | Update Role                         |
+| `/roles/{role_id}`          | DELETE     | Delete Role                         |
+| `/permissions`              | POST       | Create Permission                   |
+| `/permissions/{permission_id}` | GET     | Get Permission Details              |
+| `/permissions/{permission_id}` | PUT     | Update Permission                   |
+| `/permissions/{permission_id}` | DELETE  | Delete Permission                   |
+| `/roles/{role_id}/permissions` | POST    | Assign Permission to Role           |
+| `/roles/{role_id}/permissions/{permission_id}` | DELETE | Remove Permission from Role    |
+| `/users/{user_id}/roles`    | POST       | Assign Role to User                 |
+| `/users/{user_id}/roles/{role_id}` | DELETE | Remove Role from User             |
+
+### Agent Management
+
+Provides comprehensive functionality for creating, configuring, and managing AI agents.
+
+| **Endpoint**                      | **Method** | **Description**         | **Details**                                                                                                          |
+|-----------------------------------|------------|-------------------------|----------------------------------------------------------------------------------------------------------------------|
+| `/agents`                         | POST       | Create Agent            | Creates a new AI agent with specified configuration, models, tools, and prompts.                                      |
+| `/agents/{agent_id}`              | GET        | Get Agent Details       | Retrieves detailed information about a specific agent, including its configuration, models, tools, and prompts.       |
+| `/agents/{agent_id}`              | PUT        | Update Agent            | Updates the details and configuration of a specific agent.                                                           |
+| `/agents/{agent_id}`              | DELETE     | Delete Agent            | Deletes a specific agent and removes all associated configurations and data.                                         |
+| `/agents/{agent_id}/config`       | PUT        | Update Agent Config     | Updates the configuration settings of a specific agent.                                                              |
+| `/agents/{agent_id}/models`       | POST       | Add Model to Agent      | Adds a new AI model to a specific agent.                                                                             |
+| `/agents/{agent_id}/models/{model_id}` | DELETE | Remove Model from Agent | Removes a specific AI model from an agent.                                                                           |
+| `/agents/{agent_id}/tools`        | POST       | Add Tool to Agent       | Adds a new tool to a specific agent, enabling it to perform additional tasks.                                        |
+| `/agents/{agent_id}/tools/{tool_id}` | DELETE | Remove Tool from Agent | Removes a specific tool from an agent.                                                                               |
+| `/agents/{agent_id}/prompts`      | POST       | Add Prompt to Agent     | Adds a new conversation prompt to a specific agent.                                                                  |
+| `/agents/{agent_id}/prompts/{prompt_id}` | DELETE | Remove Prompt from Agent | Removes a specific conversation prompt from an agent.                                                                |
+| `/agents/{agent_id}/subscriptions` | POST      | Subscribe to Agent      | Subscribes a user to a specific agent, granting them access to interact with the agent.                              |
+| `/agents/{agent_id}/subscriptions/{subscription_id}` | DELETE | Unsubscribe from Agent | Unsubscribes a user from a specific agent, revoking their access.                                                    |
+| `/agents/{agent_id}/permissions`  | POST       | Assign Permission to Agent | Assigns specific permissions to an agent, defining what operations it can perform.                                  |
+| `/agents/{agent_id}/permissions/{permission_id}` | DELETE | Remove Permission from Agent | Removes specific permissions from an agent.                                                                        |
+| `/agents/{agent_id}/files`        | POST       | Link File to Agent      | Links a file to an agent, making it part of the agent's knowledge base.                                              |
+| `/agents/{agent_id}/files/{file_id}` | DELETE | Unlink File from Agent | Removes a file from an agent's knowledge base.                                                                       |
+
+
+### Conversation Management
+
+Handles the management of interactions between users and agents, including maintaining conversation context, storing and retrieving messages, and managing conversation workflows.
+
+| **Endpoint**                      | **Method** | **Description**                   | **Details**                                                                                                                  |
+|-----------------------------------|------------|-----------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| `/conversations`                  | POST       | Create Conversation               | Creates a new conversation instance between a user and an agent.                                                              |
+| `/conversations/{conversation_id}` | GET        | Get Conversation Details          | Retrieves detailed information about a specific conversation, including its state and context.                                |
+| `/conversations/{conversation_id}` | PUT        | Update Conversation               | Updates the details of a specific conversation, such as its title or status.                                                  |
+| `/conversations/{conversation_id}` | DELETE     | Delete Conversation               | Deletes a specific conversation and all associated messages.                                                                  |
+| `/conversations/{conversation_id}/messages` | POST       | Send Message                      | Sends a new message within a specific conversation.                                                                           |
+| `/conversations/{conversation_id}/messages/{message_id}` | GET        | Get Message Details               | Retrieves details of a specific message within a conversation.                                                                |
+| `/conversations/{conversation_id}/messages/{message_id}` | PUT        | Update Message                    | Updates the content of a specific message within a conversation.                                                              |
+| `/conversations/{conversation_id}/messages/{message_id}` | DELETE     | Delete Message                    | Deletes a specific message from a conversation.                                                                               |
+| `/conversations/{conversation_id}/history` | GET        | Get Conversation History          | Retrieves the complete message history of a specific conversation.                                                            |
+| `/conversations/{conversation_id}/context` | GET        | Get Conversation Context          | Retrieves the context and current state of a specific conversation, useful for resuming conversations.                        |
+| `/conversations/{conversation_id}/context` | PUT        | Update Conversation Context       | Updates the context of a specific conversation, such as modifying its memory or state.                                        |
+| `/conversations/{conversation_id}/group` | POST       | Add Conversation to Group         | Adds a specific conversation to a conversation group, linking it with other related conversations.                            |
+| `/conversations/{conversation_id}/group/{group_id}` | DELETE     | Remove Conversation from Group    | Removes a specific conversation from a conversation group.                                                                    |
+| `/conversations/groups`           | POST       | Create Conversation Group         | Creates a new conversation group for managing linked conversations with shared context.                                       |
+| `/conversations/groups/{group_id}` | GET        | Get Conversation Group Details    | Retrieves details of a specific conversation group, including its members and shared context.                                 |
+| `/conversations/groups/{group_id}` | PUT        | Update Conversation Group         | Updates the details or context of a specific conversation group.                                                              |
+| `/conversations/groups/{group_id}` | DELETE     | Delete Conversation Group         | Deletes a specific conversation group and unlinks all associated conversations.                                               |
+
+### File Management
+
+Handles the storage and management of multi-modal content linked to conversations and agents.
+
+| **Endpoint**                      | **Method** | **Description**                   | **Details**                                                                                                                  |
+|-----------------------------------|------------|-----------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| `/files`                          | POST       | Upload File                       | Uploads a new file and stores it within the system.                                                                           |
+| `/files/{file_id}`                | GET        | Get File Details                  | Retrieves detailed information about a specific file, including metadata.                                                     |
+| `/files/{file_id}`                | DELETE     | Delete File                       | Deletes a specific file from the system.                                                                                      |
+| `/files/{file_id}/metadata`       | PUT        | Update File Metadata              | Updates the metadata associated with a specific file.                                                                         |
+
+### RAG Pipeline
+
+Integrates with the File Management Subsystem for content ingestion and retrieval, and handles operations related to retrieval-augmented generation.
+
+| **Endpoint**                          | **Method** | **Description**                   | **Details**                                                                                                                  |
+|---------------------------------------|------------|-----------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| `/rag/files/{file_id}/ingest`         | POST       | Ingest File Content               | Processes and ingests the content of a file into the RAG pipeline for vectorized representation and retrieval.                |
+| `/rag/files/{file_id}/vector`         | GET        | Get File Vector                   | Retrieves the vectorized representation of a file's content from the RAG pipeline.                                            |
+| `/rag/files/{file_id}/vector/update`  | POST       | Update File Vector                | Updates the vectorized representation of a file's content in the RAG pipeline.                                                |
+| `/rag/files/{file_id}/embedding`      | GET        | Get File Embedding                | Retrieves the embedding of a file from the RAG subsystem for advanced querying.                                               |
+| `/rag/files/{file_id}/embedding/update` | POST      | Update File Embedding             | Updates the embedding of a file in the RAG subsystem to reflect new content or changes.                                       |
+| `/rag/files/search`                   | POST       | Search Files with RAG             | Searches for files using vectorized representations and embeddings for more accurate and relevant results.                    |
+
+### Integrations
+
+Serves as the interface and registry for tools, enabling agents to perform specific tasks or access external services.
+
+| **Endpoint**                          | **Method** | **Description**           | **Details**                                                                                                            |
+|---------------------------------------|------------|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| `/tools`                              | POST       | Register Tool             | Registers a new tool, making it available for agents to use.                                                           |
+| `/tools/{tool_id}`                    | GET        | Get Tool Details          | Retrieves detailed information about a specific tool, including its configuration and capabilities.                     |
+| `/tools/{tool_id}`                    | PUT        | Update Tool               | Updates the details and configuration of a specific tool.                                                              |
+| `/tools/{tool_id}`                    | DELETE     | Delete Tool               | Deletes a specific tool from the system.                                                                               |
+| `/agents/{agent_id}/tools`            | POST       | Add Tool to Agent         | Adds a registered tool to a specific agent, enabling the agent to use the tool.                                        |
+| `/agents/{agent_id}/tools/{tool_id}`  | DELETE     | Remove Tool from Agent    | Removes a tool from a specific agent, revoking the agent's ability to use the tool.                                     |
+| `/tools/{tool_id}/execute`            | POST       | Execute Tool              | Executes a specific tool, performing the defined task or accessing the external service.                                |
+
+### Analytics
+
+Captures events and usage data across the platform to monitor interactions and performance.
+
+| **Endpoint**                            | **Method** | **Description**               | **Details**                                                                                         |
+|-----------------------------------------|------------|-------------------------------|-----------------------------------------------------------------------------------------------------|
+| `/analytics`                            | POST       | Capture Analytics Event       | Captures an analytics event, storing data about interactions, usage, and performance.               |
+| `/analytics/{id}`                       | GET        | Get Analytics Event           | Retrieves details of a specific analytics event.                                                    |
+| `/analytics/summary`                    | GET        | Get Analytics Summary         | Provides a summary of analytics data, aggregating key metrics and performance indicators.           |
+| `/analytics/agent/{agent_id}`           | GET        | Get Agent Analytics           | Retrieves analytics data specific to a particular agent, including usage patterns and performance.  |
+| `/analytics/user/{user_id}`             | GET        | Get User Analytics            | Retrieves analytics data specific to a particular user, including interaction history and activity. |
+| `/analytics/conversation/{conversation_id}` | GET     | Get Conversation Analytics    | Retrieves analytics data specific to a particular conversation, including message statistics.       |
+| `/analytics/event-types`                | GET        | Get Analytics Event Types     | Lists all possible types of analytics events that can be captured and tracked.                      |
+| `/analytics/event-types/{type_id}`      | GET        | Get Event Type Details        | Retrieves details about a specific type of analytics event.                                         |
