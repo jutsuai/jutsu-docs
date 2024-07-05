@@ -417,29 +417,29 @@ This section details all the endpoints for the core components of the Jutsu plat
 
 Handles all operations related to user accounts, roles, permissions, and authentication, essential for managing users within the Agent Operating System.
 
-| **Endpoint**                | **Method** | **Description**                     |
-|-----------------------------|------------|-------------------------------------|
-| `/users`                    | POST       | Create User (Register Account)      |
-| `/users/{user_id}`          | GET        | Get User Details                    |
-| `/users/{user_id}`          | PUT        | Update User                         |
-| `/users/{user_id}`          | DELETE     | Delete User                         |
-| `/auth/login`               | POST       | User Login                          |
-| `/auth/logout`              | POST       | User Logout                         |
-| `/auth/refresh`             | POST       | Refresh Authentication Token        |
-| `/auth/password-reset`      | POST       | Request Password Reset              |
-| `/auth/password-reset/{token}` | POST    | Reset Password                      |
-| `/roles`                    | POST       | Create Role                         |
-| `/roles/{role_id}`          | GET        | Get Role Details                    |
-| `/roles/{role_id}`          | PUT        | Update Role                         |
-| `/roles/{role_id}`          | DELETE     | Delete Role                         |
-| `/permissions`              | POST       | Create Permission                   |
-| `/permissions/{permission_id}` | GET     | Get Permission Details              |
-| `/permissions/{permission_id}` | PUT     | Update Permission                   |
-| `/permissions/{permission_id}` | DELETE  | Delete Permission                   |
-| `/roles/{role_id}/permissions` | POST    | Assign Permission to Role           |
-| `/roles/{role_id}/permissions/{permission_id}` | DELETE | Remove Permission from Role    |
-| `/users/{user_id}/roles`    | POST       | Assign Role to User                 |
-| `/users/{user_id}/roles/{role_id}` | DELETE | Remove Role from User             |
+| **Endpoint**                | **Method** | **Description**                     | **Details**                                                                                                                   |
+|-----------------------------|------------|-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| `/users`                    | POST       | Create User (Register Account)      | Registers a new user account, allowing them access to the Agent Operating System.                                             |
+| `/users/{user_id}`          | GET        | Get User Details                    | Retrieves detailed information about a specific user, including roles and permissions.                                        |
+| `/users/{user_id}`          | PUT        | Update User                         | Updates the details of a specific user, such as email, username, or plan.                                                     |
+| `/users/{user_id}`          | DELETE     | Delete User                         | Deletes a user account and revokes all associated access and permissions.                                                     |
+| `/auth/login`               | POST       | User Login                          | Authenticates a user and issues a token for accessing protected resources.                                                    |
+| `/auth/logout`              | POST       | User Logout                         | Logs out the user and invalidates their authentication token.                                                                 |
+| `/auth/refresh`             | POST       | Refresh Authentication Token        | Refreshes the user's authentication token to maintain session continuity.                                                     |
+| `/auth/password-reset`      | POST       | Request Password Reset              | Initiates the password reset process by sending a reset link to the user's email.                                             |
+| `/auth/password-reset/{token}` | POST    | Reset Password                      | Completes the password reset process using a token provided via email.                                                        |
+| `/roles`                    | POST       | Create Role                         | Creates a new role that defines a set of permissions within the system.                                                       |
+| `/roles/{role_id}`          | GET        | Get Role Details                    | Retrieves details of a specific role, including the permissions assigned to it.                                               |
+| `/roles/{role_id}`          | PUT        | Update Role                         | Updates the details of a specific role, such as its name or description.                                                      |
+| `/roles/{role_id}`          | DELETE     | Delete Role                         | Deletes a role and revokes it from all users who were assigned this role.                                                     |
+| `/permissions`              | POST       | Create Permission                   | Creates a new permission that can be assigned to roles.                                                                       |
+| `/permissions/{permission_id}` | GET     | Get Permission Details              | Retrieves details of a specific permission.                                                                                   |
+| `/permissions/{permission_id}` | PUT     | Update Permission                   | Updates the details of a specific permission.                                                                                 |
+| `/permissions/{permission_id}` | DELETE  | Delete Permission                   | Deletes a permission and removes it from all roles to which it was assigned.                                                  |
+| `/roles/{role_id}/permissions` | POST    | Assign Permission to Role           | Assigns a specific permission to a role, extending the role's capabilities.                                                   |
+| `/roles/{role_id}/permissions/{permission_id}` | DELETE | Remove Permission from Role    | Removes a specific permission from a role, reducing the role's capabilities.                                                  |
+| `/users/{user_id}/roles`    | POST       | Assign Role to User                 | Assigns a specific role to a user, granting them the permissions associated with that role.                                   |
+| `/users/{user_id}/roles/{role_id}` | DELETE | Remove Role from User             | Removes a specific role from a user, revoking the permissions associated with that role.                                      |
 
 ### Agent Management
 
