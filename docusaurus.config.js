@@ -42,7 +42,7 @@ const config = {
         docs: {
           sidebarPath: './sidebars.js',
           routeBasePath: '/',
-          editUrl: 'https://github.com/jutsuai/jutsu-docs/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/jutsuai/jutsu-docs/tree/main',
           include: ['**/*.md', '**/*.mdx']
         },
         blog: false,
@@ -60,7 +60,8 @@ const config = {
         id: 'private',
         path: 'private-docs',
         routeBasePath: 'private',
-        include: ['**/*.md', '**/*.mdx']
+        include: ['**/*.md', '**/*.mdx'],
+        editUrl: 'https://github.com/jutsuai/jutsu-docs/tree/main',
         // sidebarPath: './sidebarsPrivate.js', // Optional: If you have a separate sidebar config for private docs
       },
     ],
