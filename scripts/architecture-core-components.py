@@ -11,26 +11,26 @@ G = nx.DiGraph()
 
 # Define colors for different entity groupings
 colors = {
-    "Orchestration API": "#ff9999",
-    "User Management": "#ff6666",
-    "Agent Management": "#66b3ff",
+    "Agent OS": "#ff9999",
+    "User Mang": "#ff6666",
+    "Agent Mang": "#66b3ff",
     "Conversation Mang": "#6699ff",
+    "File Mang": "#d9d9d9",
+    "RAG Pipeline": "#8fd9b6",
+    "Integrations": "#c2c2f0",
     "Analytics": "#ffcc99",
-    "File Management": "#d9d9d9",
-    "RAG Pipeline & API": "#8fd9b6",
-    "Integrations API": "#c2c2f0"
 }
 
 # Add nodes with positions
 positions = {
-    "Orchestration API": (10, 8),
-    "User Management": (8, 6),
-    "Agent Management": (12, 6),
-    "Conversation Mang": (10, 4),
-    "Analytics": (6, 4),
-    "File Management": (14, 4),
-    "RAG Pipeline & API": (8, 2),
-    "Integrations API": (12, 2)
+    "Agent OS": (10, 8),
+    "User Mang": (6, 8),
+    "Agent Mang": (14, 8),
+    "Conversation Mang": (8, 6),
+    "RAG Pipeline": (10, 4),
+    "Integrations": (12, 2),
+    "File Mang": (12, 6),
+    "Analytics": (8, 2),
 }
 
 for node, pos in positions.items():
@@ -38,17 +38,13 @@ for node, pos in positions.items():
 
 # Add edges to represent relationships
 relationships = [
-    ("Orchestration API", "User Management"),
-    ("Orchestration API", "Agent Management"),
-    ("Orchestration API", "Conversation Mang"),
-    ("Orchestration API", "Analytics"),
-    ("Orchestration API", "File Management"),
-    ("User Management", "RAG Pipeline & API"),
-    ("Agent Management", "RAG Pipeline & API"),
-    ("Conversation Mang", "RAG Pipeline & API"),
-    ("File Management", "RAG Pipeline & API"),
-    ("Orchestration API", "Integrations API"),
-    ("RAG Pipeline & API", "Integrations API")
+    ("Agent OS", "User Mang"),
+    ("Agent OS", "Agent Mang"),
+    ("Agent OS", "Conversation Mang"),
+    ("Agent OS", "File Mang"),
+    ("Agent OS", "RAG Pipeline"),
+    ("Agent OS", "Integrations"),
+    ("Agent OS", "Analytics"),
 ]
 
 for source, target in relationships:
