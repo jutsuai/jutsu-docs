@@ -2,6 +2,8 @@
 id: architecture
 title: Architecture
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import ZoomableImage from '@site/src/components/ZoomableImage';
 import InteractiveSchemaDiagram from '@site/src/components/InteractiveSchemaDiagram';
 
@@ -81,13 +83,16 @@ Captures events and usage data across the platform to monitor interactions and p
 
 ## Database Schema
 
-The below diagram indicates high-level entity relationships within the database schema.
-
-<ZoomableImage src="/img/docs/architecture_schema_diagram.png" alt="Schema Diagram" />
-
-<br />You can also explore the schema relationships using the interactive diagram below.
-
-<InteractiveSchemaDiagram />
+<Tabs>
+    <TabItem value="non-interactive" label="Non-Interactive">
+        The below diagram indicates high-level entity relationships within the database schema.
+        <ZoomableImage src="/img/docs/architecture_schema_diagram.png" alt="Schema Diagram" />
+    </TabItem>
+    <TabItem value="interactive" label="Interactive">
+        You can also explore the schema relationships using the interactive diagram below.
+        <InteractiveSchemaDiagram />
+    </TabItem>
+</Tabs>
 
 ### Users
 
