@@ -1,0 +1,40 @@
+svg {
+    background-color: black;
+    width: 100%;
+}
+
+.node circle {
+    cursor: pointer;
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    fill: #fff;
+}
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 150px;
+    padding: 8px;
+    font: 12px sans-serif;
+    background: #333;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.link {
+    stroke: #666;
+    stroke-opacity: 0.6;
+}
+
+.link.highlighted {
+    stroke: white;
+}
+
+text {
+    font: 12px sans-serif;
+    pointer-events: none;
+}
