@@ -11,35 +11,37 @@ const NonInteractiveSchemaDiagram = () => {
                 {
                     name: "Users",
                     children: [
-                        { name: "Analytics" },
                         { name: "Roles" },
                         { name: "Permissions" },
                         { name: "RolePermissions" },
                         {
                             name: "Agents",
                             children: [
-                                {
-                                    name: "Conversations",
-                                    children: [
-                                        { name: "Messages" },
-                                        { name: "ConversationGroups" },
-                                        { name: "GroupMemberships" }
-                                    ]
-                                },
                                 { name: "AgentConfigs" },
                                 { name: "AgentSubscriptions" },
                                 { name: "Models" },
                                 { name: "Prompts" },
                                 { name: "Tools" },
                                 { name: "Integrations" },
-                                { name: "Files", children: [
-                                        { name: "FileConversations" },
-                                        { name: "FileAgents" },
-                                        { name: "Vectors" }
+                                {
+                                    name: "Conversations",
+                                    children: [
+                                        { name: "Messages" },
+                                        { name: "ConversationGroups" },
+                                        { name: "GroupMemberships" },
+                                        { name: "Analytics" }
                                     ]
-                                },
+                                }
                             ]
                         },
+                        {
+                            name: "Files",
+                            children: [
+                                { name: "FileConversations" },
+                                { name: "FileAgents" },
+                                { name: "Vectors" }
+                            ]
+                        }
                     ]
                 }
             ]
@@ -47,7 +49,7 @@ const NonInteractiveSchemaDiagram = () => {
 
         const svg = d3.select(svgRef.current);
         const container = svg.node().parentNode;
-        const margin = { top: 20, right: 160, bottom: 20, left: 50 };
+        const margin = { top: 20, right: 160, bottom: 20, left: 50 }; // Increased left margin
 
         const updateSize = () => {
             const width = container.clientWidth - margin.right - margin.left;
