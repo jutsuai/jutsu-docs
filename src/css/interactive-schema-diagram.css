@@ -1,4 +1,4 @@
-svg {
+svg.interactive-schema-diagram {
     background-color: black;
     width: 100%;
 }
@@ -11,18 +11,6 @@ svg {
 
 .node text {
     fill: #fff;
-}
-
-.tooltip {
-    position: absolute;
-    text-align: center;
-    width: 150px;
-    padding: 8px;
-    font: 12px sans-serif;
-    background: #333;
-    border: 0px;
-    border-radius: 8px;
-    pointer-events: none;
 }
 
 .link {

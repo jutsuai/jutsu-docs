@@ -184,7 +184,7 @@ const InteractiveSchemaDiagram = () => {
 
     }, [rotationCenter]);
 
-    return <svg ref={svgRef}></svg>;
+    return <svg className={'interactive-schema-diagram'} ref={svgRef}></svg>;
 };
 
 export default InteractiveSchemaDiagram;
