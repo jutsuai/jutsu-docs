@@ -1,6 +1,8 @@
-svg.interactive-schema-diagram {
+svg.interactive-schema-diagram,
+svg.non-interactive-schema-diagram {
     background-color: black;
     width: 100%;
+    height: 100%;
 }
 
 .node circle {

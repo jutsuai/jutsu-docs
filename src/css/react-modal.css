@@ -1,0 +1,51 @@
+.ReactModal__Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 9999;
+}
+
+.ReactModal__Content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    width: 90%;
+    height: 80%;
+    max-width: 1600px;
+    max-height: 90vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.diagram-modal-viewer {
+    position: relative;
+}
+
+.diagram-container {
+    position: relative;
+    display: inline-block;
+}
+
+.fullscreen-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.fullscreen-button:hover {
+    background: rgba(0, 0, 0, 0.7);
+}

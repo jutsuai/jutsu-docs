@@ -5,6 +5,8 @@ title: Architecture
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ZoomableImage from '@site/src/components/ZoomableImage';
+import DiagramModalViewer from '@site/src/components/DiagramModalViewer';
+import NonInteractiveSchemaDiagram from '@site/src/components/NonInteractiveSchemaDiagram';
 import InteractiveSchemaDiagram from '@site/src/components/InteractiveSchemaDiagram';
 
 ## Overview
@@ -86,11 +88,15 @@ Captures events and usage data across the platform to monitor interactions and p
 <Tabs>
     <TabItem value="non-interactive" label="Non-Interactive">
         The below diagram indicates high-level entity relationships within the database schema.
-        <ZoomableImage src="/img/docs/architecture_schema_diagram.png" alt="Schema Diagram" />
+        <DiagramModalViewer>
+            <NonInteractiveSchemaDiagram />
+        </DiagramModalViewer>
     </TabItem>
     <TabItem value="interactive" label="Interactive">
         You can also explore the schema relationships using the interactive diagram below.
-        <InteractiveSchemaDiagram />
+        <DiagramModalViewer>
+            <InteractiveSchemaDiagram />
+        </DiagramModalViewer>
     </TabItem>
 </Tabs>
 

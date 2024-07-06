@@ -50,6 +50,7 @@ const config = {
           customCss: [
               './src/css/custom.css',
               './src/css/interactive-schema-diagram.css',
+              './src/css/react-modal.css',
           ]
         },
       }),
