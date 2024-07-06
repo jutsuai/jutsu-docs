@@ -66,13 +66,13 @@ const NonInteractiveSchemaDiagram = () => {
         const g = svg.append('g');
 
         const simulation = d3.forceSimulation(data.nodes)
-            .force('link', d3.forceLink(data.links).id(d => d.id).distance(150))
+            .force('link', d3.forceLink(data.links).id(d => d.id).distance(450))
             .force('charge', d3.forceManyBody().strength(-300))
             .force('center', d3.forceCenter(width / 2, height / 2))
             .force('x', d3.forceX().strength(0.1))
             .force('y', d3.forceY().strength(0.1))
             .force('cluster', clusterForce)
-            .force('collide', d3.forceCollide(50))
+            .force('collide', d3.forceCollide(70))
             .on('tick', () => {
                 link.attr('x1', d => d.source.x)
                     .attr('y1', d => d.source.y)
@@ -98,12 +98,12 @@ const NonInteractiveSchemaDiagram = () => {
             .attr('class', 'node');
 
         node.append('circle')
-            .attr('r', 15)
+            .attr('r', 30)
             .style('fill', getColor);
 
         node.append('text')
             .attr('dy', -3)
-            .attr('dx', 18)
+            .attr('dx', 34)
             .text(d => d.id)
             .style('font-size', '12px')
             .style('fill', '#fff');
