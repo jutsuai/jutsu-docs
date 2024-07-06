@@ -18,6 +18,7 @@ colors = {
     "File Mang": "#d9d9d9",
     "RAG Pipeline": "#8fd9b6",
     "Integrations": "#c2c2f0",
+    "Tools": "#ffb3e6",
     "Analytics": "#ffcc99",
 }
 
@@ -28,9 +29,10 @@ positions = {
     "Agent Mang": (14, 8),
     "Conversation Mang": (8, 6),
     "RAG Pipeline": (10, 4),
-    "Integrations": (12, 2),
+    "Integrations": (8, 4),
+    "Tools": (12, 4),
     "File Mang": (12, 6),
-    "Analytics": (8, 2),
+    "Analytics": (10, 2),
 }
 
 for node, pos in positions.items():
@@ -44,6 +46,7 @@ relationships = [
     ("Agent OS", "File Mang"),
     ("Agent OS", "RAG Pipeline"),
     ("Agent OS", "Integrations"),
+    ("Agent OS", "Tools"),
     ("Agent OS", "Analytics"),
 ]
 

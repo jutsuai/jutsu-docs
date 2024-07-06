@@ -22,6 +22,7 @@ colors = {
     "prompts": "#ffcc99",
     "models": "#d9d9d9",
     "tools": "#f4e1d2",
+    "integrations": "#c2c2f0",
     "convos": "#c2c2f0",
     "msgs": "#ffb3e6",
     "convo_grps": "#f7b7a3",
@@ -45,6 +46,7 @@ positions = {
     "prompts": (14, 2),
     "models": (16, 2),
     "tools": (18, 2),
+    "integrations": (20, 2),
     "convos": (2, 1),
     "msgs": (4, 1),
     "convo_grps": (6, 1),
@@ -72,6 +74,7 @@ relationships = [
     ("prompts", "convos"),
     ("models", "agents"),
     ("tools", "agents"),
+    ("integrations", "agents"),
     ("convos", "msgs"),
     ("agents", "convos"),
     ("convos", "convo_grps"),
@@ -91,7 +94,7 @@ for source, target in relationships:
 
 # Draw nodes
 pos = nx.get_node_attributes(G, 'pos')
-nx.draw_networkx_nodes(G, pos, node_size=7000, node_color=[colors[node] for node in G.nodes()], ax=ax)
+nx.draw_networkx_nodes(G, pos, node_size=5000, node_color=[colors[node] for node in G.nodes()], ax=ax)
 
 # Draw labels within the circles
 for node, (x, y) in pos.items():

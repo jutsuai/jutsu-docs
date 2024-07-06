@@ -10,7 +10,7 @@ def calculate_positions(num_nodes, x_min, x_max, y_pos):
     return positions
 
 # List of node names
-node_names = ["User Mang", "Agent Mang", "Conversation Mang", "File Mang", "RAG Pipeline", "Integrations", "Analytics"]
+node_names = ["User Mang", "Agent Mang", "Conversation Mang", "File Mang", "RAG Pipeline", "Integrations", "Tools", "Analytics"]
 
 # Define colors for different entity groupings
 colors = {
@@ -20,54 +20,52 @@ colors = {
     "File Mang": "#6699ff",
     "RAG Pipeline": "#d9d9d9",
     "Integrations": "#8fd9b6",
+    "Tools": "#ffb3e6",
     "Analytics": "#c2c2f0",
 }
 
-# Define endpoints for each grou[
+# Define endpoints for each group
 endpoints = {
     "User Mang": [
-        "CreateUser", "GetUser", "Login", "Logout", "RefreshToken",
-        "ReqPassReset", "ResetPass", "CreateRole", "GetRole",
-        "CreatePerm", "GetPerm", "RolePerms",
-        "UserRoles", "RemoveUserRole"
+        "CreateUser", "GetUserDetails", "UpdateUser", "DeleteUser", "UserLogin",
+        "UserLogout", "RefreshToken", "PasswordResetReq", "PasswordReset", "CreateRole",
+        "GetRoleDetails", "UpdateRole", "DeleteRole", "CreatePermission", "GetPermissionDetails",
+        "UpdatePermission", "DeletePermission", "AssignPermission", "RemovePermission", "AssignRole",
+        "RemoveRole"
     ],
     "Agent Mang": [
-        "CreateAgent", "GetAgent", "AgentConfig",
-        "AgentModels", "GetModel",
-        "AgentTools", "GetTool",
-        "AgentPrompts", "GetPrompt",
-        "AgentSubs", "GetSub",
-        "AgentPerms", "GetPerm",
-        "AgentFiles", "GetFile"
+        "CreateAgent", "GetAgentDetails", "UpdateAgent", "DeleteAgent", "UpdateAgentConfig",
+        "AddAgentModel", "RemoveAgentModel", "AddAgentTool", "RemoveAgentTool", "AddAgentPrompt",
+        "RemoveAgentPrompt", "SubscribeAgent", "UnsubscribeAgent", "AssignAgentPermission", "RemoveAgentPermission",
+        "LinkAgentFile", "UnlinkAgentFile"
     ],
     "Conversation Mang": [
-        "CreateConv", "GetConv", "ConvMsgs",
-        "GetMsg", "ConvHist",
-        "ConvContext", "ConvGroup",
-        "CreateGroup", "GetGroup"
+        "CreateConversation", "GetConvDetails", "UpdateConvDetails", "DeleteConversation", "SendMessage",
+        "GetMessageDetails", "UpdateMessage", "DeleteMessage", "GetConvHistory", "GetConvContext",
+        "UpdateConvContext", "AddConvToGroup", "RemoveConvFromGroup", "CreateConvGroup", "GetConvGroupDetails",
+        "UpdateConvGroup", "DeleteConvGroup"
     ],
     "File Mang": [
-        "UploadFile", "GetFile", "FileMetadata"
+        "UploadFile", "GetFileDetails", "DeleteFile", "UpdateFileMetadata"
     ],
     "RAG Pipeline": [
-        "IngestFile", "FileVector",
-        "UpdateVector", "FileEmbed",
-        "UpdateEmbed", "SearchFiles"
+        "IngestFileContent", "GetFileVector", "UpdateFileVector", "GetFileEmbedding", "UpdateFileEmbedding", "SearchFilesWithRAG"
     ],
     "Integrations": [
-        "RegisterTool", "GetTool", "AgentTools",
-        "GetAgentTool", "ExecTool"
+        "RegisterIntegration", "GetIntegrationDetails", "UpdateIntegration", "DeleteIntegration", "ListIntegrations"
+    ],
+    "Tools": [
+        "RegisterTool", "GetToolDetails", "UpdateTool", "DeleteTool", "ListTools",
+        "AddToolToAgent", "RemoveToolFromAgent", "ExecuteTool"
     ],
     "Analytics": [
-        "CaptureEvent", "GetEvent", "EventSummary",
-        "AgentAnalytics", "UserAnalytics",
-        "ConvAnalytics", "EventTypes",
-        "GetEventType"
+        "CaptureAnalyticsEvent", "GetAnalyticsEvent", "GetAnalyticsSummary", "GetAgentAnalytics", "GetUserAnalytics",
+        "GetConversationAnalytics", "GetEventTypes", "GetEventTypeDetails"
     ],
 }
 
 # Create a figure and axis
-fig, ax = plt.subplots(figsize=(20, 8))
+fig, ax = plt.subplots(figsize=(20, 12))
 fig.patch.set_facecolor('black')
 ax.set_facecolor('black')
 
@@ -76,13 +74,13 @@ ax.axis('off')
 
 # Set limits to add padding
 ax.set_xlim(-22.5, 22.5)
-ax.set_ylim(-6.5, 6.5)
+ax.set_ylim(-7.5, 7.5)
 
 # Define the graph
 G = nx.DiGraph()
 
 # Calculate positions for the nodes
-positions = calculate_positions(len(node_names), -19, 19, 4)
+positions = calculate_positions(len(node_names), -19, 19, 6)
 
 # Assign correct node names to positions
 positions = {node_names[i]: pos for i, pos in enumerate(positions.values())}
@@ -93,15 +91,13 @@ for node, pos in positions.items():
 
 # Draw nodes
 pos = nx.get_node_attributes(G, 'pos')
-nx.draw_networkx_nodes(G, pos, node_size=10000, node_color=[colors[node.split('_')[0]] if '_' in node else colors[node] for node in G.nodes()], ax=ax)
+nx.draw_networkx_nodes(G, pos, node_size=10000, node_color=[colors[node] for node in G.nodes()], ax=ax)
 
 # Draw labels within the circles
 for node, (x, y) in pos.items():
-    label = node.split('_')[0] if '_' in node else node
-    ax.text(x, y, label, color='black', ha='center', va='center', fontsize=8, fontweight='bold')
+    ax.text(x, y, node, color='black', ha='center', va='center', fontsize=8, fontweight='bold')
 
 # Draw group nodes (rectangles) underneath each main node
-rect_height = 1.0
 rect_y_offset = 2.9
 line_offset = 2.1
 for node, (x, y) in pos.items():
@@ -126,3 +122,4 @@ for node, (x, y) in pos.items():
 plt.savefig('./static/img/docs/architecture_endpoints_diagram.png', bbox_inches='tight', facecolor=fig.get_facecolor())
 
 plt.show()
+

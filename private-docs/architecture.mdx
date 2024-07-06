@@ -53,14 +53,23 @@ The Retrieval-Augmented Generation (RAG) Pipeline handles all operations related
 - Integrates with embedding models to generate and update vector representations.
 - Provides APIs for querying and managing vectors.
 
-### Integrations
+### Tools
 
-Serves as the interface and registry for tools, enabling agents to perform specific tasks or access external services.
+Represents functional entities within the Agent OS that perform specific tasks.
 
 - Manages the registry of available tools.
 - Provides interfaces for agents to invoke and interact with tools.
 - Handles the execution of tool operations and returns results to agents.
-- Supports integration with external services and APIs.
+- Supports internal tools and integration with external services.
+
+### Integrations
+
+Manages connections and interactions with third-party services and APIs.
+
+- Manages the registration and configuration of external services.
+- Provides interfaces for agents to interact with external services.
+- Handles authentication and access control for external services.
+- Manages external API calls and processes responses.
 
 ### Analytics
 Captures events and usage data across the platform to monitor interactions and performance.
@@ -145,6 +154,7 @@ The below diagram indicates high-level entity relationships within the database 
 | `prompt_id`         | Foreign Key| The prompt template associated with the agent, references `prompts`                     |
 | `model_id`          | Foreign Key| The AI model used by the agent, references `models`                                     |
 | `tool_ids`          | Foreign Key| The tools that the agent can use, references `tools`                                    |
+| `integration_ids`   | Foreign Key| The integrations that the agent can use, references `integrations`                      |
 | `vectors_id`        | Foreign Key| References to the default vector set associated with the agent, references `vectors`    |
 | `agent_config_id`   | Foreign Key| References the configuration settings for the agent, references `agent_configs`         |
 | `is_public`         | Boolean    | Boolean indicating whether the agent is public or private                               |
@@ -238,6 +248,23 @@ The below diagram indicates high-level entity relationships within the database 
 
 ---
 
+### Integrations
+
+**Definition**: Manages connections and interactions with third-party services and APIs.
+
+| Attribute           | Type       | Description                                                                             |
+|---------------------|------------|-----------------------------------------------------------------------------------------|
+| `integration_id`    | Primary Key| Unique identifier for each integration                                                  |
+| `name`              | String     | The name of the integration                                                             |
+| `description`       | String     | A brief description of what the integration does                                        |
+| `api_url`           | String     | The base URL of the third-party service API                                             |
+| `auth_method`       | String     | The authentication method used (e.g., API key, OAuth)                                   |
+| `config`            | JSON       | Configuration details specific to the integration (e.g., API keys, tokens)              |
+| `created_by`        | Foreign Key| The user who created the integration, references `users`                                |
+| `created_at`        | Timestamp  | Timestamp of when the integration was created                                           |
+| `updated_at`        | Timestamp  | Timestamp of the last update to the integration                                         |
+
+---
 
 ### Conversations
 
@@ -411,6 +438,8 @@ Handles all operations related to user accounts, roles, permissions, and authent
 | `AssignRole`            | `/users/{user_id}/roles`          | POST       | Assign Role to User                 | Assigns a specific role to a user, granting them the permissions associated with that role.                                   |
 | `RemoveRole`            | `/users/{user_id}/roles/{role_id}`| DELETE     | Remove Role from User               | Removes a specific role from a user, revoking the permissions associated with that role.                                      |
 
+---
+
 ### Agent Management
 
 Provides comprehensive functionality for creating, configuring, and managing AI agents.
@@ -434,6 +463,8 @@ Provides comprehensive functionality for creating, configuring, and managing AI 
 | `RemoveAgentPermission` | `/agents/{agent_id}/permissions/{permission_id}` | DELETE | Remove Permission from Agent | Removes specific permissions from an agent.                                                                        |
 | `LinkAgentFile`         | `/agents/{agent_id}/files`        | POST       | Link File to Agent      | Links a file to an agent, making it part of the agent's knowledge base.                                              |
 | `UnlinkAgentFile`       | `/agents/{agent_id}/files/{file_id}` | DELETE | Unlink File from Agent | Removes a file from an agent's knowledge base.                                                                       |
+
+---
 
 ### Conversation Management
 
@@ -459,6 +490,8 @@ Handles the management of interactions between users and agents, including maint
 | `UpdateConvGroup`       | `/conversations/groups/{group_id}` | PUT        | Update Conversation Group         | Updates the details or context of a specific conversation group.                                                              |
 | `DeleteConvGroup`       | `/conversations/groups/{group_id}` | DELETE     | Delete Conversation Group         | Deletes a specific conversation group and unlinks all associated conversations.                                               |
 
+---
+
 ### File Management
 
 Handles the storage and management of multi-modal content linked to conversations and agents.
@@ -469,6 +502,8 @@ Handles the storage and management of multi-modal content linked to conversation
 | `GetFileDetails`        | `/files/{file_id}`                | GET        | Get File Details                  | Retrieves detailed information about a specific file, including metadata.                                                     |
 | `DeleteFile`            | `/files/{file_id}`                | DELETE     | Delete File                       | Deletes a specific file from the system.                                                                                      |
 | `UpdateFileMetadata`    | `/files/{file_id}/metadata`       | PUT        | Update File Metadata              | Updates the metadata associated with a specific file.                                                                         |
+
+---
 
 ### RAG Pipeline
 
@@ -483,19 +518,38 @@ Integrates with the File Management Subsystem for content ingestion and retrieva
 | `UpdateFileEmbedding`   | `/rag/files/{file_id}/embedding/update` | POST      | Update File Embedding             | Updates the embedding of a file in the RAG subsystem to reflect new content or changes.                                       |
 | `SearchFilesWithRAG`    | `/rag/files/search`                   | POST       | Search Files with RAG             | Searches for files using vectorized representations and embeddings for more accurate and relevant results.                    |
 
+---
+
+### Tools
+
+Serves as the interface for managing and interacting with tools that agents can use to perform specific tasks.
+
+| **ID**                  | **Endpoint**                          | **Method** | **Description**                    | **Details**                                                                                                            |
+|-------------------------|---------------------------------------|------------|------------------------------------|------------------------------------------------------------------------------------------------------------------------|
+| `RegisterTool`          | `/tools`                              | POST       | Register Tool                      | Registers a new tool, making it available for agents to use.                                                           |
+| `GetToolDetails`        | `/tools/{tool_id}`                    | GET        | Get Tool Details                   | Retrieves detailed information about a specific tool, including its configuration and capabilities.                    |
+| `UpdateTool`            | `/tools/{tool_id}`                    | PUT        | Update Tool                        | Updates the details and configuration of a specific tool.                                                              |
+| `DeleteTool`            | `/tools/{tool_id}`                    | DELETE     | Delete Tool                        | Deletes a specific tool from the system.                                                                               |
+| `ListTools`             | `/tools`                              | GET        | List All Tools                     | Retrieves a list of all registered tools.                                                                              |
+| `AddToolToAgent`        | `/agents/{agent_id}/tools`            | POST       | Add Tool to Agent                  | Adds a registered tool to a specific agent, enabling the agent to use the tool.                                        |
+| `RemoveToolFromAgent`   | `/agents/{agent_id}/tools/{tool_id}`  | DELETE     | Remove Tool from Agent             | Removes a tool from a specific agent, revoking the agent's ability to use the tool.                                     |
+| `ExecuteTool`           | `/tools/{tool_id}/execute`            | POST       | Execute Tool                       | Executes a specific tool, performing the defined task or accessing the external service.                                |
+
+---
+
 ### Integrations
 
-Serves as the interface and registry for tools, enabling agents to perform specific tasks or access external services.
+Serves as the interface for managing and interacting with third-party services and APIs.
 
-| **ID**                  | **Endpoint**                          | **Method** | **Description**           | **Details**                                                                                                            |
-|-------------------------|---------------------------------------|------------|---------------------------|------------------------------------------------------------------------------------------------------------------------|
-| `RegisterTool`          | `/tools`                              | POST       | Register Tool             | Registers a new tool, making it available for agents to use.                                                           |
-| `GetToolDetails`        | `/tools/{tool_id}`                    | GET        | Get Tool Details          | Retrieves detailed information about a specific tool, including its configuration and capabilities.                     |
-| `UpdateTool`            | `/tools/{tool_id}`                    | PUT        | Update Tool               | Updates the details and configuration of a specific tool.                                                              |
-| `DeleteTool`            | `/tools/{tool_id}`                    | DELETE     | Delete Tool               | Deletes a specific tool from the system.                                                                               |
-| `AddToolToAgent`        | `/agents/{agent_id}/tools`            | POST       | Add Tool to Agent         | Adds a registered tool to a specific agent, enabling the agent to use the tool.                                        |
-| `RemoveToolFromAgent`   | `/agents/{agent_id}/tools/{tool_id}`  | DELETE     | Remove Tool from Agent    | Removes a tool from a specific agent, revoking the agent's ability to use the tool.                                     |
-| `ExecuteTool`           | `/tools/{tool_id}/execute`            | POST       | Execute Tool              | Executes a specific tool, performing the defined task or accessing the external service.                                |
+| **ID**                  | **Endpoint**                          | **Method** | **Description**                    | **Details**                                                                                                            |
+|-------------------------|---------------------------------------|------------|------------------------------------|------------------------------------------------------------------------------------------------------------------------|
+| `RegisterIntegration`   | `/integrations`                       | POST       | Register Integration               | Registers a new integration, making it available for agents to use.                                                    |
+| `GetIntegrationDetails` | `/integrations/{integration_id}`      | GET        | Get Integration Details            | Retrieves detailed information about a specific integration, including its configuration and capabilities.             |
+| `UpdateIntegration`     | `/integrations/{integration_id}`      | PUT        | Update Integration                 | Updates the details and configuration of a specific integration.                                                       |
+| `DeleteIntegration`     | `/integrations/{integration_id}`      | DELETE     | Delete Integration                 | Deletes a specific integration from the system.                                                                        |
+| `ListIntegrations`      | `/integrations`                       | GET        | List All Integrations              | Retrieves a list of all registered integrations.                                                                       |
+
+---
 
 ### Analytics
 
@@ -511,3 +565,4 @@ Captures events and usage data across the platform to monitor interactions and p
 | `GetConversationAnalytics` | `/analytics/conversation/{conversation_id}` | GET     | Get Conversation Analytics    | Retrieves analytics data specific to a particular conversation, including message statistics.       |
 | `GetEventTypes`         | `/analytics/event-types`                | GET        | Get Analytics Event Types     | Lists all possible types of analytics events that can be captured and tracked.                      |
 | `GetEventTypeDetails`   | `/analytics/event-types/{type_id}`      | GET        | Get Event Type Details        | Retrieves details about a specific type of analytics event.                                         |
+
