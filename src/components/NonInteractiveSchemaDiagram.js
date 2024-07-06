@@ -18,27 +18,28 @@ const NonInteractiveSchemaDiagram = () => {
                         {
                             name: "Agents",
                             children: [
+                                {
+                                    name: "Conversations",
+                                    children: [
+                                        { name: "Messages" },
+                                        { name: "ConversationGroups" },
+                                        { name: "GroupMemberships" }
+                                    ]
+                                },
                                 { name: "AgentConfigs" },
                                 { name: "AgentSubscriptions" },
                                 { name: "Models" },
                                 { name: "Prompts" },
                                 { name: "Tools" },
-                                { name: "Integrations" }
+                                { name: "Integrations" },
+                                { name: "Files", children: [
+                                        { name: "FileConversations" },
+                                        { name: "FileAgents" },
+                                        { name: "Vectors" }
+                                    ]
+                                },
                             ]
                         },
-                        { name: "Files", children: [
-                                { name: "FileConversations" },
-                                { name: "FileAgents" },
-                                { name: "Vectors" }
-                            ]},
-                        {
-                            name: "Conversations",
-                            children: [
-                                { name: "Messages" },
-                                { name: "ConversationGroups" },
-                                { name: "GroupMemberships" }
-                            ]
-                        }
                     ]
                 }
             ]
