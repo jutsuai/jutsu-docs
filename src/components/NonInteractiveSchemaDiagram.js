@@ -6,134 +6,143 @@ const NonInteractiveSchemaDiagram = () => {
 
     useEffect(() => {
         const data = {
-            nodes: [
-                { id: "Users", group: "A" },
-                { id: "Roles", group: "A" },
-                { id: "Permissions", group: "A" },
-                { id: "RolePermissions", group: "A" },
-                { id: "Agents", group: "B" },
-                { id: "AgentConfigs", group: "B" },
-                { id: "AgentSubscriptions", group: "B" },
-                { id: "Prompts", group: "C" },
-                { id: "Models", group: "C" },
-                { id: "Tools", group: "D" },
-                { id: "Integrations", group: "D" },
-                { id: "Conversations", group: "E" },
-                { id: "Messages", group: "E" },
-                { id: "ConversationGroups", group: "E" },
-                { id: "GroupMemberships", group: "E" },
-                { id: "Files", group: "F" },
-                { id: "FileConversations", group: "F" },
-                { id: "FileAgents", group: "F" },
-                { id: "Vectors", group: "F" },
-                { id: "Analytics", group: "G" }
-            ],
-            links: [
-                { source: "Users", target: "Roles" },
-                { source: "Roles", target: "RolePermissions" },
-                { source: "Permissions", target: "RolePermissions" },
-                { source: "Users", target: "Agents" },
-                { source: "Agents", target: "AgentConfigs" },
-                { source: "Users", target: "AgentSubscriptions" },
-                { source: "Agents", target: "AgentSubscriptions" },
-                { source: "Users", target: "Prompts" },
-                { source: "Prompts", target: "Conversations" },
-                { source: "Models", target: "Agents" },
-                { source: "Tools", target: "Agents" },
-                { source: "Integrations", target: "Agents" },
-                { source: "Conversations", target: "Messages" },
-                { source: "Agents", target: "Conversations" },
-                { source: "Conversations", target: "ConversationGroups" },
-                { source: "ConversationGroups", target: "GroupMemberships" },
-                { source: "Users", target: "Files" },
-                { source: "Files", target: "FileConversations" },
-                { source: "Files", target: "FileAgents" },
-                { source: "Files", target: "Vectors" },
-                { source: "Conversations", target: "Analytics" },
-                { source: "Users", target: "Analytics" },
-                { source: "Agents", target: "Analytics" },
-                { source: "Messages", target: "Analytics" }
+            name: "Root",
+            children: [
+                {
+                    name: "Users",
+                    children: [
+                        { name: "Analytics" },
+                        { name: "Roles" },
+                        { name: "Permissions" },
+                        { name: "RolePermissions" },
+                        {
+                            name: "Agents",
+                            children: [
+                                { name: "AgentConfigs" },
+                                { name: "AgentSubscriptions" },
+                                { name: "Models" },
+                                { name: "Prompts" },
+                                { name: "Tools" },
+                                { name: "Integrations" }
+                            ]
+                        },
+                        { name: "Files", children: [
+                                { name: "FileConversations" },
+                                { name: "FileAgents" },
+                                { name: "Vectors" }
+                            ]},
+                        {
+                            name: "Conversations",
+                            children: [
+                                { name: "Messages" },
+                                { name: "ConversationGroups" },
+                                { name: "GroupMemberships" }
+                            ]
+                        }
+                    ]
+                }
             ]
         };
 
-        const width = 960;
-        const height = 800;
+        const svg = d3.select(svgRef.current);
+        const container = svg.node().parentNode;
+        const margin = { top: 20, right: 160, bottom: 20, left: 50 };
 
-        const svg = d3.select(svgRef.current)
-            .attr('width', width)
-            .attr('height', height);
+        const updateSize = () => {
+            const width = container.clientWidth - margin.right - margin.left;
+            const height = container.clientHeight - margin.top - margin.bottom;
 
-        const g = svg.append('g');
+            svg.attr('width', width + margin.right + margin.left)
+                .attr('height', height + margin.top + margin.bottom);
 
-        const simulation = d3.forceSimulation(data.nodes)
-            .force('link', d3.forceLink(data.links).id(d => d.id).distance(450))
-            .force('charge', d3.forceManyBody().strength(-300))
-            .force('center', d3.forceCenter(width / 2, height / 2))
-            .force('x', d3.forceX().strength(0.1))
-            .force('y', d3.forceY().strength(0.1))
-            .force('cluster', clusterForce)
-            .force('collide', d3.forceCollide(70))
-            .on('tick', () => {
-                link.attr('x1', d => d.source.x)
-                    .attr('y1', d => d.source.y)
-                    .attr('x2', d => d.target.x)
-                    .attr('y2', d => d.target.y);
+            svg.selectAll('*').remove();
 
-                node.attr('transform', d => `translate(${d.x},${d.y})`);
-            });
+            const g = svg.append('g')
+                .attr('transform', `translate(${margin.left},${margin.top})`);
 
-        const link = g.append('g')
-            .selectAll('line')
-            .data(data.links)
-            .enter().append('line')
-            .attr('class', 'link')
-            .style('stroke', '#999')
-            .style('stroke-opacity', 0.6)
-            .style('stroke-width', 2);
+            const root = d3.hierarchy(data);
 
-        const node = g.append('g')
-            .selectAll('g')
-            .data(data.nodes)
-            .enter().append('g')
-            .attr('class', 'node');
+            const treeLayout = d3.tree().size([height, width]);
 
-        node.append('circle')
-            .attr('r', 30)
-            .style('fill', getColor);
+            treeLayout(root);
 
-        node.append('text')
-            .attr('dy', -3)
-            .attr('dx', 34)
-            .text(d => d.id)
-            .style('font-size', '12px')
-            .style('fill', '#fff');
+            g.selectAll('line')
+                .data(root.links())
+                .enter()
+                .append('line')
+                .attr('x1', d => d.source.y)
+                .attr('y1', d => d.source.x)
+                .attr('x2', d => d.target.y)
+                .attr('y2', d => d.target.x)
+                .attr('stroke', '#555');
 
-        function getColor(d) {
-            const colorMap = {
-                "A": "#ff6347",  // Tomato
-                "B": "#1e90ff",  // DodgerBlue
-                "C": "#ffd700",  // Gold
-                "D": "#32cd32",  // LimeGreen
-                "E": "#9370db",  // MediumPurple
-                "F": "#ff69b4",  // HotPink
-                "G": "#ff4500"   // OrangeRed
-            };
-            return colorMap[d.group];
-        }
+            g.selectAll('circle')
+                .data(root.descendants())
+                .enter()
+                .append('circle')
+                .attr('cx', d => d.y)
+                .attr('cy', d => d.x)
+                .attr('r', 10)
+                .attr('fill', d => getColor(d));
 
-        function clusterForce(alpha) {
-            const clusters = {};
-            data.nodes.forEach(d => {
-                if (!clusters[d.group]) clusters[d.group] = d;
-                const cluster = clusters[d.group];
-                const k = alpha * 0.1;
-                d.vx -= (d.x - cluster.x) * k;
-                d.vy -= (d.y - cluster.y) * k;
-            });
-        }
+            g.selectAll('text')
+                .data(root.descendants())
+                .enter()
+                .append('text')
+                .attr('x', d => d.y)
+                .attr('y', d => d.x)
+                .attr('dy', '0.31em')
+                .attr('dx', d => d.children ? -12 : 12)
+                .attr('text-anchor', d => d.children ? 'end' : 'start')
+                .text(d => d.data.name)
+                .attr('font-size', '12px')
+                .attr('fill', '#fff');
+
+            function getColor(d) {
+                const colorMap = {
+                    "A": "#ff6347",  // Tomato
+                    "B": "#1e90ff",  // DodgerBlue
+                    "C": "#ffd700",  // Gold
+                    "D": "#32cd32",  // LimeGreen
+                    "E": "#9370db",  // MediumPurple
+                    "F": "#ff69b4",  // HotPink
+                    "G": "#ff4500"   // OrangeRed
+                };
+
+                const groupColorMap = {
+                    "Users": colorMap["A"],
+                    "Roles": colorMap["A"],
+                    "Permissions": colorMap["A"],
+                    "RolePermissions": colorMap["A"],
+                    "Agents": colorMap["B"],
+                    "AgentConfigs": "#87cefa",  // LightSkyBlue
+                    "AgentSubscriptions": "#4682b4",  // SteelBlue
+                    "Prompts": colorMap["C"],
+                    "Models": "#ffd700",  // LightGoldenRodYellow
+                    "Tools": colorMap["D"],
+                    "Integrations": "#66cdaa",  // MediumAquaMarine
+                    "Conversations": colorMap["E"],
+                    "Messages": "#dda0dd",  // Plum
+                    "ConversationGroups": "#ba55d3",  // MediumOrchid
+                    "GroupMemberships": "#8a2be2",  // BlueViolet
+                    "Files": colorMap["F"],
+                    "FileConversations": "#ff1493",  // DeepPink
+                    "FileAgents": "#db7093",  // PaleVioletRed
+                    "Vectors": "#ffb6c1",  // LightPink
+                    "Analytics": colorMap["G"]
+                };
+
+                return groupColorMap[d.data.name];
+            }
+        };
+
+        updateSize();
+        window.addEventListener('resize', updateSize);
+
+        return () => window.removeEventListener('resize', updateSize);
     }, []);
 
-    return <svg className={'non-interactive-schema-diagram'} ref={svgRef}></svg>;
+    return <svg className={'non-interactive-schema-diagram'} width={960} height={800} ref={svgRef}></svg>;
 };
 
 export default NonInteractiveSchemaDiagram;
