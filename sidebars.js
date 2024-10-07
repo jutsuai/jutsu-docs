@@ -15,12 +15,13 @@
 const sidebars = {
   // By default, Docusaurus generates a sidebar from the docs folder structure
   docsSidebar: [
-    'introduction',
-    'ecosystem',
-    'tokenomics',
-    'terminology',
-    'support',
-    'faq'
+    "introduction",
+    "how-it-works",
+    "ecosystem",
+    "tokenomics",
+    "terminology",
+    "support",
+    "faq",
   ],
 
   // But you can create a sidebar manually
