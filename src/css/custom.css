@@ -18,7 +18,7 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #00a3ff;
   --ifm-color-primary-dark: #0093e6;
   --ifm-color-primary-darker: #008bd9;
@@ -52,4 +52,8 @@
 .markdown table th:last-child,
 .markdown table td:last-child {
   width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
 }
