@@ -3,7 +3,7 @@ node_modules/
 
 # Build files
 dist/
-
+build/
 
 # IntelliJ IDEA project files
 .idea/
